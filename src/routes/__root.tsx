@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Sylvester" },
+      { name: "description", content: "Visionary Canvas is a dynamic portfolio website showcasing creative projects with interactive visual elements." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Sylvester" },
+      { property: "og:description", content: "Visionary Canvas is a dynamic portfolio website showcasing creative projects with interactive visual elements." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Sylvester" },
+      { name: "twitter:description", content: "Visionary Canvas is a dynamic portfolio website showcasing creative projects with interactive visual elements." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/42463075-3144-453f-9bae-c581cbe9f633/id-preview-97b048d8--b8df0d39-3cba-4870-9826-979be414f2f8.lovable.app-1780773997073.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/42463075-3144-453f-9bae-c581cbe9f633/id-preview-97b048d8--b8df0d39-3cba-4870-9826-979be414f2f8.lovable.app-1780773997073.png" },
     ],
     links: [
       {
