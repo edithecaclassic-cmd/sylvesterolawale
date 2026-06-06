@@ -214,3 +214,9 @@
 .animate-marquee {
   animation: marquee-x 24s linear infinite;
 }
+
+@property --r {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
