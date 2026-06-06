@@ -1,12 +1,11 @@
 import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import heroPlain from "@/assets/hero-plain.png.asset.json";
-import heroCyborg from "@/assets/hero-cyborg.png.asset.json";
+import heroCyborg from "@/assets/hero-cyborg-aligned.png";
 import { socials } from "@/data/portfolio";
 
 export function Hero() {
   const maskRef = useRef<HTMLImageElement>(null);
-  const glowRef = useRef<HTMLDivElement>(null);
 
   const move = (clientX: number, clientY: number, target: HTMLElement) => {
     const rect = target.getBoundingClientRect();
@@ -16,26 +15,17 @@ export function Hero() {
       maskRef.current.style.setProperty("--mx", `${x}%`);
       maskRef.current.style.setProperty("--my", `${y}%`);
     }
-    if (glowRef.current) {
-      glowRef.current.style.left = `${x}%`;
-      glowRef.current.style.top = `${y}%`;
-      glowRef.current.style.opacity = "1";
-    }
   };
 
   const reveal = (on: boolean) => {
-    if (maskRef.current) maskRef.current.style.setProperty("--r", on ? "150px" : "0px");
-    if (glowRef.current && !on) glowRef.current.style.opacity = "0";
+    if (maskRef.current) maskRef.current.style.setProperty("--r", on ? "180px" : "0px");
   };
 
   return (
-    <section
-      id="top"
-      className="relative min-h-screen overflow-hidden bg-hero"
-    >
-      {/* Portrait stack with spotlight mask */}
+    <section id="top" className="relative min-h-screen overflow-hidden bg-hero">
+      {/* Full-bleed portrait background with spotlight reveal */}
       <div
-        className="absolute inset-0 z-0 flex items-end justify-center md:justify-end"
+        className="absolute inset-0 z-0"
         onMouseEnter={() => reveal(true)}
         onMouseLeave={() => reveal(false)}
         onMouseMove={(e) => move(e.clientX, e.clientY, e.currentTarget)}
@@ -50,41 +40,30 @@ export function Hero() {
         }}
         onTouchEnd={() => reveal(false)}
       >
-        <div className="relative h-[78vh] w-full max-w-3xl md:h-[94vh] md:max-w-[58vw]">
-          {/* bottom: cyborg, revealed through the mask hole */}
-          <img
-            src={heroCyborg.url}
-            alt="Sylvester Olaleye cybernetic portrait"
-            className="absolute inset-0 h-full w-full object-contain object-bottom"
-            draggable={false}
-          />
-          {/* top: plain portrait with a transparent hole following the cursor */}
-          <img
-            ref={maskRef}
-            src={heroPlain.url}
-            alt="Sylvester Olaleye portrait"
-            className="hero-mask absolute inset-0 h-full w-full object-contain object-bottom"
-            draggable={false}
-          />
-          {/* hue glow that trails the cursor */}
-          <div
-            ref={glowRef}
-            className="pointer-events-none absolute h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-0 transition-opacity duration-300 mix-blend-screen"
-            style={{
-              background:
-                "radial-gradient(circle, oklch(0.72 0.22 45 / 0.55) 0%, transparent 70%)",
-            }}
-          />
-        </div>
+        {/* bottom: cyborg, revealed through the mask hole */}
+        <img
+          src={heroCyborg}
+          alt="Sylvester Olaleye cybernetic portrait"
+          className="absolute inset-0 h-full w-full object-cover object-[center_20%]"
+          draggable={false}
+        />
+        {/* top: plain portrait with a transparent hole following the cursor */}
+        <img
+          ref={maskRef}
+          src={heroPlain.url}
+          alt="Sylvester Olaleye portrait"
+          className="hero-mask absolute inset-0 h-full w-full object-cover object-[center_20%]"
+          draggable={false}
+        />
       </div>
 
       {/* gradient scrims for legibility */}
-      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-r from-black/55 via-black/15 to-transparent" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-56 bg-gradient-to-t from-black/55 to-transparent" />
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-r from-black/55 via-black/20 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-64 bg-gradient-to-t from-black/70 to-transparent" />
 
       {/* Content overlay */}
       <div className="pointer-events-none relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-end px-5 pb-14 pt-28 md:px-8 md:pb-20">
-        <h1 className="font-display text-[18vw] leading-[0.82] tracking-tight md:text-[12.5vw] lg:text-[11rem]">
+        <h1 className="font-display text-[13vw] leading-[0.85] tracking-tight md:text-[9vw] lg:text-[7.5rem]">
           <span className="block text-white animate-rise-in" style={{ animationDelay: "0.05s" }}>
             SYLVESTER
           </span>
