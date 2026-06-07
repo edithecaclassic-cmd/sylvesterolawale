@@ -3,6 +3,7 @@ import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
 import { SelectedWork } from "@/components/site/SelectedWork";
 import { Services } from "@/components/site/Services";
+import { Process } from "@/components/site/Process";
 import { Experience } from "@/components/site/Experience";
 import { ContactCTA } from "@/components/site/ContactCTA";
 
@@ -34,6 +35,7 @@ function Index() {
       <Hero />
       <SelectedWork />
       <Services />
+      <Process />
       <Experience />
       <ContactCTA />
     </main>
