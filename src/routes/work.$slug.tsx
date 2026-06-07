@@ -99,7 +99,7 @@ function ProjectPage() {
               <div>
                 <h2 className="font-heading text-xl font-bold">Results</h2>
                 <ul className="mt-3 space-y-2">
-                  {p.results.map((r) => (
+                  {p.results.map((r: string) => (
                     <li key={r} className="flex items-start gap-3 text-muted-foreground">
                       <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
                       <span>{r}</span>
@@ -115,7 +115,7 @@ function ProjectPage() {
                   Deliverables
                 </h3>
                 <div className="mt-3 flex flex-wrap gap-2">
-                  {p.deliverables.map((d) => (
+                  {p.deliverables.map((d: string) => (
                     <span
                       key={d}
                       className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground"
