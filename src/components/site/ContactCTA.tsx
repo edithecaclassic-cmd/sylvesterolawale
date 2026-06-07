@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { socials } from "@/data/portfolio";
 
 export function ContactCTA() {
@@ -17,26 +18,28 @@ export function ContactCTA() {
           Together we can build something fast, bold, and unforgettable. Let's bring your
           ideas to life in a way that converts.
         </p>
-        <a
-          href="mailto:hello@sylvesterolaleye.com"
+        <Link
+          to="/contact"
           className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-ink shadow-glow transition-transform hover:scale-105"
         >
           Contact Me <ArrowRight className="h-4 w-4" />
-        </a>
+        </Link>
       </div>
 
       <footer className="relative mx-auto mt-20 flex max-w-7xl flex-col items-center justify-between gap-6 border-t border-white/15 px-5 pt-8 md:flex-row md:px-8">
-        <span className="font-display text-2xl tracking-tight text-white">
+        <Link to="/" className="font-display text-2xl tracking-tight text-white">
           SYLVESTER OLALEYE
-        </span>
+        </Link>
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
           {socials.map((s) => (
             <a
-              key={s}
-              href="#"
+              key={s.label}
+              href={s.url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70 transition-colors hover:text-primary"
             >
-              {s}
+              {s.label}
             </a>
           ))}
         </div>
