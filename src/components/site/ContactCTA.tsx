@@ -33,7 +33,7 @@ export function ContactCTA() {
         <Link to="/" className="font-display text-2xl tracking-tight text-white">
           SYLVESTER OLALEYE
         </Link>
-        <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
           {socials.map((s) => (
             <a
               key={s.label}
@@ -45,6 +45,12 @@ export function ContactCTA() {
               {s.label}
             </a>
           ))}
+          <Link
+            to="/privacy"
+            className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70 transition-colors hover:text-primary"
+          >
+            Privacy
+          </Link>
         </div>
         <span className="text-xs text-white/50">
           © {new Date().getFullYear()} Sylvester Olaleye

@@ -265,3 +265,92 @@ export const processSteps: ProcessStep[] = [
       "We ship, test, and refine, then keep improving with real data so your site gets better over time.",
   },
 ];
+
+export type Stat = {
+  value: string;
+  label: string;
+};
+
+export const stats: Stat[] = [
+  { value: "50+", label: "Projects Delivered" },
+  { value: "5.0", label: "Average Client Rating" },
+  { value: "4+", label: "Years of Experience" },
+  { value: "100%", label: "On-Time Delivery" },
+];
+
+export const marqueeItems: string[] = [
+  "Web Design",
+  "Vibe Coding",
+  "Framer",
+  "Webflow",
+  "Ecommerce",
+  "Branding",
+  "Data Analytics",
+  "AI Automation",
+  "SEO",
+  "Conversion Design",
+];
+
+export type Testimonial = {
+  quote: string;
+  name: string;
+  role: string;
+  initials: string;
+};
+
+export const testimonials: Testimonial[] = [
+  {
+    quote:
+      "Sylvester rebuilt our site in days and the new design instantly felt premium. Bookings went up and the whole process was smooth and clear.",
+    name: "Caroline Ayeni",
+    role: "Personal Coach",
+    initials: "CA",
+  },
+  {
+    quote:
+      "Fast, bold, and exactly what our brand needed. He understood the vision quickly and delivered a storefront that actually converts.",
+    name: "Deeplus Media",
+    role: "Photography Studio",
+    initials: "DM",
+  },
+  {
+    quote:
+      "Professional from start to finish. Clean code, sharp design, and great communication. I would happily work with him again.",
+    name: "AXION Logistics",
+    role: "Operations Lead",
+    initials: "AX",
+  },
+];
+
+export type Faq = {
+  question: string;
+  answer: string;
+};
+
+export const faqs: Faq[] = [
+  {
+    question: "What kind of projects do you take on?",
+    answer:
+      "I build fast, conversion-focused websites, ecommerce storefronts, brand identities, and data dashboards. If it lives on the web and needs to look sharp and perform, I can help.",
+  },
+  {
+    question: "How long does a typical project take?",
+    answer:
+      "Most landing pages and portfolio sites take one to two weeks. Larger ecommerce or multi-page builds usually run two to four weeks depending on scope and content readiness.",
+  },
+  {
+    question: "Which tools do you build with?",
+    answer:
+      "I work with Framer, Webflow, and modern code-based builders, choosing the right stack for your goals, budget, and how you want to manage the site after launch.",
+  },
+  {
+    question: "Do you offer support after launch?",
+    answer:
+      "Yes. I stay available after launch for tweaks, optimisation, and ongoing improvements so your site keeps getting better with real data.",
+  },
+  {
+    question: "How do we get started?",
+    answer:
+      "Reach out through the contact page or any of my channels. We will talk through your goals, agree on scope, and I will send a clear plan and timeline.",
+  },
+];
