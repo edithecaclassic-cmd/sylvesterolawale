@@ -4,7 +4,7 @@ import { Link } from "@tanstack/react-router";
 import { services } from "@/data/portfolio";
 
 export function Services() {
-  const [open, setOpen] = useState(0);
+  const [open, setOpen] = useState(-1);
 
   return (
     <section id="services" className="relative bg-background pb-24 pt-4 md:pb-32">
@@ -73,7 +73,7 @@ export function Services() {
                 </button>
 
                 <div
-                  className="grid transition-all duration-500"
+                  className="grid transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
                   style={{
                     gridTemplateRows: isOpen ? "1fr" : "0fr",
                     opacity: isOpen ? 1 : 0,

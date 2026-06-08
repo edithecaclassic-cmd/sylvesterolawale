@@ -8,7 +8,10 @@ export function ContactCTA() {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
       <div className="relative mx-auto max-w-4xl px-5 text-center md:px-8">
         <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-white backdrop-blur">
-          <span className="h-2 w-2 rounded-full bg-primary" />
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
+          </span>
           Available for New Project
         </span>
         <h2 className="mt-6 font-display text-5xl leading-[0.9] tracking-tight text-white md:text-8xl">

@@ -59,19 +59,15 @@ export function Hero() {
         />
       </div>
 
-      {/* gradient scrims for legibility */}
-      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-r from-black/60 via-black/25 to-transparent" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-64 bg-gradient-to-t from-black/75 to-transparent" />
-
-      {/* Vertical social rail on the right */}
-      <div className="pointer-events-auto absolute right-0 top-1/2 z-20 hidden -translate-y-1/2 flex-col border-y border-l border-white/15 bg-black/20 backdrop-blur-sm md:flex">
+      {/* Vertical social rail anchored to lower-right of the viewport */}
+      <div className="pointer-events-auto absolute bottom-8 right-0 z-20 hidden flex-col overflow-hidden rounded-l-2xl border border-r-0 border-white/30 bg-black/20 backdrop-blur-sm md:flex">
         {socials.map((s) => (
           <a
             key={s.label}
             href={s.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="border-b border-white/10 px-5 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/70 transition-colors last:border-b-0 hover:bg-primary hover:text-primary-foreground"
+            className="border-b border-white/30 px-5 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/70 transition-colors last:border-b-0 hover:bg-primary hover:text-primary-foreground"
           >
             {s.label}
           </a>

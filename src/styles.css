@@ -178,16 +178,19 @@
     -webkit-mask-image: radial-gradient(
       circle var(--r) at var(--mx) var(--my),
       transparent 0%,
-      transparent 60%,
+      transparent 65%,
       black 100%
     );
     mask-image: radial-gradient(
       circle var(--r) at var(--mx) var(--my),
       transparent 0%,
-      transparent 60%,
+      transparent 65%,
       black 100%
     );
-    transition: none;
+    transition:
+      --mx 0.25s ease-out,
+      --my 0.25s ease-out,
+      --r 0.35s ease-out;
   }
 }
 
@@ -219,4 +222,16 @@
   syntax: "<length>";
   inherits: false;
   initial-value: 0px;
+}
+
+@property --mx {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 50%;
+}
+
+@property --my {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 40%;
 }
