@@ -38,10 +38,15 @@ function Index() {
     <main className="bg-background">
       <Nav />
       <Hero />
+      <Stats />
+      <Marquee />
+      <About />
       <SelectedWork />
       <Services />
       <Process />
+      <Testimonials />
       <Experience />
+      <Faq />
       <ContactCTA />
     </main>
   );
