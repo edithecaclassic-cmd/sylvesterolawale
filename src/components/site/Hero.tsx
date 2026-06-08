@@ -42,17 +42,17 @@ export function Hero() {
     >
       {/* Full-bleed portrait background with spotlight reveal */}
       <div className="absolute inset-0 z-0">
-        {/* bottom: glowing alt portrait, revealed through the mask hole */}
+        {/* bottom: cyborg portrait, revealed through the mask hole */}
         <img
-          src={heroAlt}
-          alt="Sylvester Olaleye creative technology portrait"
+          src={heroReveal.url}
+          alt="Sylvester Olaleye cybernetic portrait"
           className="absolute inset-0 h-full w-full object-cover object-[center_15%]"
           draggable={false}
         />
-        {/* top: plain portrait with a transparent hole following the cursor */}
+        {/* top: front portrait with a transparent hole following the cursor */}
         <img
           ref={maskRef}
-          src={heroPlain.url}
+          src={heroFront.url}
           alt="Sylvester Olaleye portrait"
           className="hero-mask absolute inset-0 h-full w-full object-cover object-[center_15%]"
           draggable={false}
@@ -60,14 +60,14 @@ export function Hero() {
       </div>
 
       {/* Vertical social rail anchored to lower-right of the viewport */}
-      <div className="pointer-events-auto absolute bottom-8 right-0 z-20 hidden flex-col overflow-hidden rounded-l-2xl border border-r-0 border-white/30 bg-black/20 backdrop-blur-sm md:flex">
+      <div className="pointer-events-auto absolute bottom-8 right-4 z-20 hidden flex-col gap-3 md:flex">
         {socials.map((s) => (
           <a
             key={s.label}
             href={s.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="border-b border-white/30 px-5 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/70 transition-colors last:border-b-0 hover:bg-primary hover:text-primary-foreground"
+            className="rounded-full border border-white/30 bg-black/20 px-5 py-2.5 text-center text-xs font-semibold uppercase tracking-[0.2em] text-white/80 backdrop-blur-sm transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground"
           >
             {s.label}
           </a>
