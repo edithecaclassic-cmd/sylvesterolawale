@@ -1,8 +1,8 @@
 import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import heroPlain from "@/assets/hero-plain-new.png.asset.json";
-import heroAlt from "@/assets/hero-alt.png";
+import heroFront from "@/assets/hero-front.png.asset.json";
+import heroReveal from "@/assets/hero-cyborg-reveal.png.asset.json";
 import { socials } from "@/data/portfolio";
 
 export function Hero() {
