@@ -73,7 +73,7 @@ export function Services() {
                 </button>
 
                 <div
-                  className="grid transition-all duration-500"
+                  className="grid transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
                   style={{
                     gridTemplateRows: isOpen ? "1fr" : "0fr",
                     opacity: isOpen ? 1 : 0,

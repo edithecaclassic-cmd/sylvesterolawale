@@ -89,7 +89,7 @@ export function Experience() {
                 </button>
 
                 <div
-                  className="grid transition-all duration-500 ease-out"
+                  className="grid transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
                   style={{
                     gridTemplateRows: isActive ? "1fr" : "0fr",
                     opacity: isActive ? 1 : 0,
