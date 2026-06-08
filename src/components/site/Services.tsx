@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { ArrowUpRight, Plus, X } from "lucide-react";
-import { Link } from "@tanstack/react-router";
 import { services } from "@/data/portfolio";
 
 export function Services() {
-  const [open, setOpen] = useState(-1);
+  const [open, setOpen] = useState(0);
 
   return (
     <section id="services" className="relative bg-background pb-24 pt-4 md:pb-32">
@@ -12,12 +11,12 @@ export function Services() {
         <p className="font-display text-5xl text-foreground/5 md:text-8xl">SERVICE</p>
         <div className="-mt-6 flex flex-col items-start justify-between gap-4 md:-mt-12 md:flex-row md:items-end">
           <h2 className="font-display text-4xl tracking-tight md:text-6xl">SERVICE</h2>
-          <Link
-            to="/services"
+          <a
+            href="#services"
             className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-sm font-semibold transition-colors hover:border-primary hover:text-primary"
           >
             See All Services <ArrowUpRight className="h-4 w-4" />
-          </Link>
+          </a>
         </div>
 
         <div className="mt-12 divide-y divide-border border-y border-border">
@@ -73,23 +72,16 @@ export function Services() {
                 </button>
 
                 <div
-                  className="grid transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                  className="grid transition-all duration-500"
                   style={{
                     gridTemplateRows: isOpen ? "1fr" : "0fr",
                     opacity: isOpen ? 1 : 0,
                   }}
                 >
                   <div className="overflow-hidden">
-                    <div className="max-w-2xl px-1 pb-7 pl-1 md:pl-14">
-                      <p className="text-base text-muted-foreground">{s.description}</p>
-                      <Link
-                        to="/services/$slug"
-                        params={{ slug: s.slug }}
-                        className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
-                      >
-                        Learn more <ArrowUpRight className="h-4 w-4" />
-                      </Link>
-                    </div>
+                    <p className="max-w-2xl px-1 pb-7 pl-1 text-base text-muted-foreground md:pl-14">
+                      {s.description}
+                    </p>
                   </div>
                 </div>
               </div>

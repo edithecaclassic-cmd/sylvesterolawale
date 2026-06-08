@@ -1,5 +1,4 @@
 import { ArrowRight } from "lucide-react";
-import { Link } from "@tanstack/react-router";
 import { socials } from "@/data/portfolio";
 
 export function ContactCTA() {
@@ -8,10 +7,7 @@ export function ContactCTA() {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
       <div className="relative mx-auto max-w-4xl px-5 text-center md:px-8">
         <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-white backdrop-blur">
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
-          </span>
+          <span className="h-2 w-2 rounded-full bg-primary" />
           Available for New Project
         </span>
         <h2 className="mt-6 font-display text-5xl leading-[0.9] tracking-tight text-white md:text-8xl">
@@ -21,36 +17,28 @@ export function ContactCTA() {
           Together we can build something fast, bold, and unforgettable. Let's bring your
           ideas to life in a way that converts.
         </p>
-        <Link
-          to="/contact"
+        <a
+          href="mailto:hello@sylvesterolaleye.com"
           className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-ink shadow-glow transition-transform hover:scale-105"
         >
           Contact Me <ArrowRight className="h-4 w-4" />
-        </Link>
+        </a>
       </div>
 
       <footer className="relative mx-auto mt-20 flex max-w-7xl flex-col items-center justify-between gap-6 border-t border-white/15 px-5 pt-8 md:flex-row md:px-8">
-        <Link to="/" className="font-display text-2xl tracking-tight text-white">
+        <span className="font-display text-2xl tracking-tight text-white">
           SYLVESTER OLALEYE
-        </Link>
-        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+        </span>
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
           {socials.map((s) => (
             <a
-              key={s.label}
-              href={s.url}
-              target="_blank"
-              rel="noopener noreferrer"
+              key={s}
+              href="#"
               className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70 transition-colors hover:text-primary"
             >
-              {s.label}
+              {s}
             </a>
           ))}
-          <Link
-            to="/privacy"
-            className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70 transition-colors hover:text-primary"
-          >
-            Privacy
-          </Link>
         </div>
         <span className="text-xs text-white/50">
           © {new Date().getFullYear()} Sylvester Olaleye
