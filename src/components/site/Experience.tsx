@@ -9,7 +9,7 @@ import projectCaroline from "@/assets/project-caroline.jpg";
 const floatImages = [projectAxion, projectDeeplus, projectForma, projectCaroline];
 
 export function Experience() {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(-1);
   const [hover, setHover] = useState<number | null>(null);
   const floatRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);

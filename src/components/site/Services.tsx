@@ -4,7 +4,7 @@ import { Link } from "@tanstack/react-router";
 import { services } from "@/data/portfolio";
 
 export function Services() {
-  const [open, setOpen] = useState(0);
+  const [open, setOpen] = useState(-1);
 
   return (
     <section id="services" className="relative bg-background pb-24 pt-4 md:pb-32">
