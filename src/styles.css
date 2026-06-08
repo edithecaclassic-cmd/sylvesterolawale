@@ -223,3 +223,15 @@
   inherits: false;
   initial-value: 0px;
 }
+
+@property --mx {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 50%;
+}
+
+@property --my {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 40%;
+}
