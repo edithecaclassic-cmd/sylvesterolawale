@@ -6,8 +6,11 @@ export function ContactCTA() {
     <section id="contact" className="relative overflow-hidden bg-hero py-24 md:py-36">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
       <div className="relative mx-auto max-w-4xl px-5 text-center md:px-8">
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-white backdrop-blur">
-          <span className="h-2 w-2 rounded-full bg-primary" />
+        <span className="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-white">
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-70" />
+            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-success" />
+          </span>
           Available for New Project
         </span>
         <h2 className="mt-6 font-display text-5xl leading-[0.9] tracking-tight text-white md:text-8xl">
@@ -29,14 +32,16 @@ export function ContactCTA() {
         <span className="font-display text-2xl tracking-tight text-white">
           SYLVESTER OLALEYE
         </span>
-        <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+        <div className="flex flex-wrap justify-center gap-2">
           {socials.map((s) => (
             <a
-              key={s}
-              href="#"
-              className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70 transition-colors hover:text-primary"
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/80 transition-colors hover:text-primary"
             >
-              {s}
+              {s.label}
             </a>
           ))}
         </div>
