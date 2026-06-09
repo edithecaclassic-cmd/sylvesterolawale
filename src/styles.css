@@ -37,6 +37,7 @@
   --color-ring-offset-background: var(--background);
   --color-ink: var(--ink);
   --color-ink-foreground: var(--ink-foreground);
+  --color-success: var(--success);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
@@ -174,10 +175,27 @@
     box-shadow: var(--shadow-card);
   }
 
+  /* Glassmorphism */
+  .glass {
+    background-color: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    box-shadow: var(--glass-shadow);
+  }
+  .glass-strong {
+    background-color: var(--glass-bg-strong);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    box-shadow: var(--glass-shadow);
+  }
+
   .text-stroke {
     -webkit-text-stroke: 1.5px currentColor;
     color: transparent;
   }
+
 
   /* Reveal mask for hero hover spotlight */
   .hero-mask {
