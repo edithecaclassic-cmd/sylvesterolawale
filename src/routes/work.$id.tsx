@@ -101,7 +101,7 @@ function ProjectPage() {
 
             <h3 className="mt-10 font-heading text-xl font-bold">What I delivered</h3>
             <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-              {p.deliverables.map((d) => (
+              {p.deliverables.map((d: string) => (
                 <li key={d} className="flex items-start gap-3 text-sm text-muted-foreground">
                   <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary">
                     <Check className="h-3 w-3" />
@@ -118,7 +118,7 @@ function ProjectPage() {
                 Results
               </h3>
               <div className="mt-4 space-y-4">
-                {p.results.map((r) => (
+                {p.results.map((r: { label: string; value: string }) => (
                   <div key={r.label}>
                     <p className="font-display text-3xl text-primary">{r.value}</p>
                     <p className="text-sm text-muted-foreground">{r.label}</p>
@@ -131,7 +131,7 @@ function ProjectPage() {
                 Tags
               </h3>
               <div className="mt-3 flex flex-wrap gap-2">
-                {p.tags.map((t) => (
+                {p.tags.map((t: string) => (
                   <span
                     key={t}
                     className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground"
