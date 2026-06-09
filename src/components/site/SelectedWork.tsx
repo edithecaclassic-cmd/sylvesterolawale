@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { projects } from "@/data/portfolio";
 
 export function SelectedWork() {
@@ -12,19 +13,20 @@ export function SelectedWork() {
           <h2 className="font-display text-4xl tracking-tight md:text-6xl">
             SELECTED WORK
           </h2>
-          <a
-            href="#work"
+          <Link
+            to="/work"
             className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-sm font-semibold transition-colors hover:border-primary hover:text-primary"
           >
             View All Work <ArrowUpRight className="h-4 w-4" />
-          </a>
+          </Link>
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
           {projects.map((p, i) => (
-            <a
+            <Link
               key={p.id}
-              href="#work"
+              to="/work/$id"
+              params={{ id: p.id }}
               className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-glow animate-rise-in"
               style={{ animationDelay: `${i * 0.08}s` }}
             >
@@ -38,7 +40,7 @@ export function SelectedWork() {
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <span className="absolute left-4 top-4 rounded-full bg-ink/80 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-ink-foreground backdrop-blur">
-                  Real Project
+                  {p.category}
                 </span>
                 <span className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   <ArrowUpRight className="h-4 w-4" />
@@ -58,7 +60,7 @@ export function SelectedWork() {
                   ))}
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
