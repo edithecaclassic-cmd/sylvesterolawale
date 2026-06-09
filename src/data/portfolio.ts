@@ -7,9 +7,15 @@ export type Project = {
   id: string;
   initials: string;
   title: string;
+  category: string;
+  year: string;
   description: string;
+  overview: string;
   tags: string[];
   image: string;
+  liveUrl?: string;
+  deliverables: string[];
+  results: { label: string; value: string }[];
 };
 
 export const projects: Project[] = [
@@ -17,35 +23,101 @@ export const projects: Project[] = [
     id: "deeplus-media",
     initials: "DM",
     title: "Deeplus Media",
-    description: "Full brand identity and website build for a Nigerian media company.",
-    tags: ["Web Design", "Framer"],
+    category: "Photography Studio",
+    year: "2025",
+    description:
+      "Editorial website build for a Lagos-based wedding and portrait photography studio.",
+    overview:
+      "Deeplus Media is a Lagos-based photography studio specialising in weddings, portraits and the moments in between. I built an editorial, gallery-first website that lets the work breathe, with a refined dark hero, animated marquee, and a curated grid of recent frames. Every section was designed to feel like a printed magazine rather than a feed, matching the studio's promise of frames that feel like forever.",
+    tags: ["Web Design", "Editorial", "Framer"],
     image: projectDeeplus,
+    liveUrl: "https://deeplusdefinition.vercel.app",
+    deliverables: [
+      "Editorial homepage with animated hero",
+      "Filterable photography gallery",
+      "Services and about storytelling sections",
+      "Responsive, mobile-first layout",
+    ],
+    results: [
+      { label: "Projects delivered", value: "375+" },
+      { label: "Verified reviews", value: "4.7\u2605" },
+      { label: "Years behind the lens", value: "8" },
+    ],
   },
   {
     id: "axion-logistics",
     initials: "AX",
     title: "AXION Logistics",
+    category: "Logistics",
+    year: "2024",
     description: "Website redesign for a logistics company with a bold editorial aesthetic.",
-    tags: ["Web Design", "Framer"],
+    overview:
+      "AXION needed a website that felt as fast and dependable as their fleet. I delivered a bold, high-contrast redesign with a strong typographic system, real-time tracking visuals, and a conversion-focused quote flow that turned visitors into booked shipments.",
+    tags: ["Web Design", "Branding", "Framer"],
     image: projectAxion,
+    deliverables: [
+      "Brand-led homepage redesign",
+      "Service and coverage pages",
+      "Quote request flow",
+      "Performance optimisation",
+    ],
+    results: [
+      { label: "Faster load", value: "2.1s" },
+      { label: "More quote requests", value: "+38%" },
+      { label: "Pages shipped", value: "12" },
+    ],
   },
   {
     id: "caroline-ayeni",
     initials: "CA",
     title: "Caroline Ayeni Coaching",
+    category: "Personal Brand",
+    year: "2024",
     description: "Personal coaching website redesign with a warm, conversion-focused layout.",
-    tags: ["Web Design", "Framer"],
+    overview:
+      "A warm, trust-building personal brand site for a life and business coach. The design balances approachable storytelling with clear calls to book, using soft gradients, testimonials, and a streamlined booking journey.",
+    tags: ["Web Design", "Personal Brand"],
     image: projectCaroline,
+    deliverables: [
+      "Warm personal brand identity",
+      "Programs and offers pages",
+      "Testimonial system",
+      "Booking integration",
+    ],
+    results: [
+      { label: "More bookings", value: "+52%" },
+      { label: "Bounce rate", value: "-27%" },
+      { label: "Pages shipped", value: "8" },
+    ],
   },
   {
     id: "forma-interior",
     initials: "FI",
     title: "FORMA Interior Design Studio",
+    category: "Interior Design",
+    year: "2023",
     description: "Luxury interior design studio speculative redesign with a refined gallery.",
-    tags: ["Web Design", "Framer"],
+    overview:
+      "A speculative luxury redesign for an interior design studio, built around a refined project gallery and quiet, confident typography. The layout lets photography lead, with generous whitespace and subtle motion that feels premium and intentional.",
+    tags: ["Web Design", "Luxury", "Framer"],
     image: projectForma,
+    deliverables: [
+      "Luxury visual identity",
+      "Project gallery with case studies",
+      "Studio and process pages",
+      "Contact and enquiry flow",
+    ],
+    results: [
+      { label: "Gallery views", value: "+64%" },
+      { label: "Avg. session", value: "3m 12s" },
+      { label: "Pages shipped", value: "10" },
+    ],
   },
 ];
+
+export function getProject(id: string) {
+  return projects.find((p) => p.id === id);
+}
 
 export type Service = {
   title: string;
@@ -118,4 +190,45 @@ export const experiences: Experience[] = [
   },
 ];
 
-export const socials = ["Fiverr", "LinkedIn", "Contra", "Instagram"];
+export type Social = { label: string; href: string };
+
+export const socials: Social[] = [
+  { label: "Fiverr", href: "https://www.fiverr.com" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/sylvester-olawale-5286b82a2/" },
+  { label: "Contra", href: "https://contra.com" },
+  { label: "Instagram", href: "https://www.instagram.com/vesterweb3/" },
+  { label: "WhatsApp", href: "https://wa.me/2348058496536" },
+];
+
+export type ProcessStep = {
+  no: string;
+  title: string;
+  description: string;
+};
+
+export const processSteps: ProcessStep[] = [
+  {
+    no: "01",
+    title: "Discover",
+    description:
+      "We start with a deep dive into your goals, audience, and competitors so every decision is grounded in strategy, not guesswork.",
+  },
+  {
+    no: "02",
+    title: "Design",
+    description:
+      "I craft a bold, on-brand visual direction with wireframes and high-fidelity mockups, refining until the look feels unmistakably yours.",
+  },
+  {
+    no: "03",
+    title: "Build",
+    description:
+      "Pixel-perfect, responsive development with smooth motion and clean code, optimised for speed and search from the first commit.",
+  },
+  {
+    no: "04",
+    title: "Launch",
+    description:
+      "We test across devices, polish the details, and ship. Then I track performance and iterate so the site keeps converting.",
+  },
+];
