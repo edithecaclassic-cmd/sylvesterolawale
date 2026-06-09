@@ -96,26 +96,27 @@ export function Hero() {
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:border-primary hover:text-primary"
+            className="glass inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition-colors hover:text-primary"
           >
             Hire Me <ArrowRight className="h-4 w-4" />
           </a>
         </div>
+      </div>
 
-        <div
-          className="pointer-events-auto mt-8 flex flex-wrap gap-x-6 gap-y-2 animate-rise-in"
-          style={{ animationDelay: "0.5s" }}
-        >
-          {socials.map((s) => (
-            <a
-              key={s}
-              href="#"
-              className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60 transition-colors hover:text-primary"
-            >
-              {s}
-            </a>
-          ))}
-        </div>
+      {/* Vertical glass social rail, bottom-right */}
+      <div className="pointer-events-auto absolute bottom-6 right-4 z-20 flex flex-col items-stretch gap-2 md:bottom-10 md:right-8">
+        {socials.map((s, i) => (
+          <a
+            key={s.label}
+            href={s.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="glass animate-rise-in rounded-full px-5 py-2.5 text-center text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:text-primary"
+            style={{ animationDelay: `${0.5 + i * 0.06}s` }}
+          >
+            {s.label}
+          </a>
+        ))}
       </div>
     </section>
   );

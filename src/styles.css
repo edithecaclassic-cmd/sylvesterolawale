@@ -2,7 +2,6 @@
 @source "../src";
 @import "tw-animate-css";
 
-@import url("https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,100..900;1,100..900&family=Inter:wght@300..800&display=swap");
 
 @custom-variant dark (&:is(.dark *));
 
@@ -37,6 +36,7 @@
   --color-ring-offset-background: var(--background);
   --color-ink: var(--ink);
   --color-ink-foreground: var(--ink-foreground);
+  --color-success: var(--success);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
@@ -103,10 +103,19 @@
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.66 0.21 41);
 
+  /* Status */
+  --success: oklch(0.72 0.19 150);
+
   /* Effects */
   --gradient-hero: radial-gradient(120% 120% at 70% 10%, oklch(0.62 0.21 38) 0%, oklch(0.5 0.2 34) 45%, oklch(0.28 0.13 32) 100%);
   --shadow-glow: 0 24px 60px -20px oklch(0.66 0.21 41 / 0.55);
   --shadow-card: 0 18px 40px -24px oklch(0.2 0.05 40 / 0.45);
+
+  /* Glassmorphism */
+  --glass-bg: oklch(1 0 0 / 0.08);
+  --glass-bg-strong: oklch(1 0 0 / 0.14);
+  --glass-border: oklch(1 0 0 / 0.18);
+  --glass-shadow: 0 8px 32px -8px oklch(0.1 0.02 40 / 0.45);
 }
 
 .dark {
@@ -165,10 +174,27 @@
     box-shadow: var(--shadow-card);
   }
 
+  /* Glassmorphism */
+  .glass {
+    background-color: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    box-shadow: var(--glass-shadow);
+  }
+  .glass-strong {
+    background-color: var(--glass-bg-strong);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    box-shadow: var(--glass-shadow);
+  }
+
   .text-stroke {
     -webkit-text-stroke: 1.5px currentColor;
     color: transparent;
   }
+
 
   /* Reveal mask for hero hover spotlight */
   .hero-mask {
