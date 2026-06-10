@@ -41,7 +41,7 @@ export function Nav() {
             <Link
               key={l.label}
               to={l.href}
-              className="text-sm font-medium text-white/80 transition-colors hover:text-primary"
+              className="font-mono text-sm font-medium text-white/80 transition-colors hover:text-primary"
             >
               {l.label}
             </Link>
