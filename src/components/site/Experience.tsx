@@ -25,12 +25,17 @@ export function Experience() {
   return (
     <section id="experience" className="relative bg-ink py-20 text-ink-foreground md:py-28">
       <div ref={sectionRef} className="relative mx-auto max-w-7xl px-5 md:px-8">
-        <p className="font-display text-5xl text-white/[0.04] md:text-8xl">EXPERIENCE</p>
-        <div className="-mt-6 flex items-end justify-between gap-4 md:-mt-12">
+        <p className="font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary">
+          Background
+        </p>
+        <div className="mt-3 flex items-end justify-between gap-4">
           <h2 className="font-display text-4xl tracking-tight md:text-6xl">EXPERIENCE</h2>
-          <span className="text-sm font-medium text-ink-foreground/60">
-            4+ years of experience
-          </span>
+          <Link
+            to="/experience"
+            className="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-ink-foreground/80 transition-colors hover:border-primary hover:text-primary"
+          >
+            View All <ArrowUpRight className="h-4 w-4" />
+          </Link>
         </div>
 
         {/* floating preview that trails the cursor on hover */}
