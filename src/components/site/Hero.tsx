@@ -76,7 +76,7 @@ export function Hero() {
         </h1>
 
         <div className="mt-6 max-w-md animate-rise-in" style={{ animationDelay: "0.3s" }}>
-          <p className="font-heading text-sm font-bold uppercase tracking-[0.25em] text-primary">
+          <p className="font-mono text-sm font-bold uppercase tracking-[0.25em] text-primary">
             Vibe Coder & Website Developer
           </p>
           <p className="mt-3 text-base text-white/80">
