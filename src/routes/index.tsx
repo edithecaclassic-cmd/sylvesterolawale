@@ -6,6 +6,7 @@ import { Services } from "@/components/site/Services";
 import { Experience } from "@/components/site/Experience";
 import { ProcessSection } from "@/components/site/ProcessSection";
 import { ContactCTA } from "@/components/site/ContactCTA";
+import { Footer } from "@/components/site/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -38,6 +39,7 @@ function Index() {
       <ProcessSection />
       <Experience />
       <ContactCTA />
+      <Footer />
     </main>
   );
 }

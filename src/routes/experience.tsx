@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
 import { ContactCTA } from "@/components/site/ContactCTA";
+import { Footer } from "@/components/site/Footer";
 import { experiences } from "@/data/portfolio";
 
 export const Route = createFileRoute("/experience")({
@@ -83,6 +84,7 @@ function ExperiencePage() {
       </section>
 
       <ContactCTA />
+      <Footer />
     </main>
   );
 }
