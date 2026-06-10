@@ -81,7 +81,7 @@ function ExperienceDetail() {
 
             <h2 className="mt-10 font-heading text-2xl font-bold">Highlights</h2>
             <ul className="mt-4 space-y-3">
-              {item.highlights.map((h) => (
+              {item.highlights.map((h: string) => (
                 <li key={h} className="flex items-start gap-3 text-muted-foreground">
                   <Check className="mt-1 h-4 w-4 flex-shrink-0 text-primary" />
                   <span>{h}</span>
@@ -96,7 +96,7 @@ function ExperienceDetail() {
                 Focus areas
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
-                {item.skills.map((s) => (
+                {item.skills.map((s: string) => (
                   <span
                     key={s}
                     className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground"
