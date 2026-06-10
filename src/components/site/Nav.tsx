@@ -31,7 +31,7 @@ export function Nav() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-70" />
             <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-success" />
           </span>
-          <span className="text-xs font-semibold uppercase tracking-[0.2em]">
+          <span className="font-mono text-xs font-semibold uppercase tracking-[0.2em]">
             Available for new project
           </span>
         </Link>
