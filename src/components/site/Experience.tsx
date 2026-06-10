@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { experiences } from "@/data/portfolio";
 import projectAxion from "@/assets/project-axion.jpg";
 import projectDeeplus from "@/assets/project-deeplus.jpg";
