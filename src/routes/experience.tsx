@@ -44,21 +44,30 @@ function ExperiencePage() {
         <div className="mx-auto max-w-4xl px-5 md:px-8">
           <div className="relative border-l border-border pl-8">
             {experiences.map((e, i) => (
-              <div
+              <Link
                 key={e.org}
-                className="relative pb-12 last:pb-0 animate-rise-in"
+                to="/experience/$id"
+                params={{ id: e.id }}
+                className="group relative block pb-12 last:pb-0 animate-rise-in"
                 style={{ animationDelay: `${i * 0.1}s` }}
               >
                 <span className="absolute -left-[2.6rem] flex h-6 w-6 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground">
                   {i + 1}
                 </span>
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <h2 className="font-heading text-xl font-bold md:text-2xl">{e.org}</h2>
-                  <span className="text-sm font-medium text-muted-foreground">{e.period}</span>
+                  <h2 className="font-heading text-xl font-bold transition-colors group-hover:text-primary md:text-2xl">
+                    {e.org}
+                  </h2>
+                  <span className="font-mono text-sm font-medium text-muted-foreground">
+                    {e.period}
+                  </span>
                 </div>
                 <p className="mt-1 text-sm font-semibold text-primary">{e.role}</p>
                 <p className="mt-3 max-w-2xl text-muted-foreground">{e.detail}</p>
-              </div>
+                <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-foreground transition-colors group-hover:text-primary">
+                  Read more <ArrowRight className="h-4 w-4" />
+                </span>
+              </Link>
             ))}
           </div>
 
