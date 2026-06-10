@@ -7,6 +7,9 @@ import { Experience } from "@/components/site/Experience";
 import { ProcessSection } from "@/components/site/ProcessSection";
 import { ContactCTA } from "@/components/site/ContactCTA";
 import { Footer } from "@/components/site/Footer";
+import { StatsBand } from "@/components/site/StatsBand";
+import { Testimonials } from "@/components/site/Testimonials";
+import { FAQ } from "@/components/site/FAQ";
 
 export const Route = createFileRoute("/")({
   head: () => ({
