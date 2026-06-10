@@ -280,3 +280,79 @@ export const processSteps: ProcessStep[] = [
       "We test across devices, polish the details, and ship. Then I track performance and iterate so the site keeps converting.",
   },
 ];
+
+export type Stat = { value: string; label: string };
+
+export const stats: Stat[] = [
+  { value: "50+", label: "Projects delivered" },
+  { value: "4+", label: "Years of experience" },
+  { value: "5.0", label: "Average client rating" },
+  { value: "24h", label: "Typical response time" },
+];
+
+export const marqueeItems: string[] = [
+  "Web Design",
+  "Vibe Coding",
+  "Framer",
+  "Webflow",
+  "Ecommerce",
+  "Branding",
+  "Data Analytics",
+  "Conversion",
+  "UI / UX",
+  "SEO",
+];
+
+export type Testimonial = {
+  quote: string;
+  name: string;
+  role: string;
+};
+
+export const testimonials: Testimonial[] = [
+  {
+    quote:
+      "Sylvester turned our vague idea into a website that finally feels like us. Bold, fast, and converting better than anything we had before.",
+    name: "Daniel A.",
+    role: "Founder, AXION Logistics",
+  },
+  {
+    quote:
+      "The whole process was smooth and genuinely creative. He understood the brand instantly and delivered ahead of schedule.",
+    name: "Caroline Ayeni",
+    role: "Business Coach",
+  },
+  {
+    quote:
+      "Our gallery-first site looks like a printed magazine. Clients keep telling us how premium it feels. Worth every naira.",
+    name: "Deeplus Media",
+    role: "Photography Studio",
+  },
+  {
+    quote:
+      "Clear communication, sharp eye for design, and clean code. Rare to find all three in one person.",
+    name: "Tomiwa O.",
+    role: "Startup Founder",
+  },
+];
+
+export type Faq = { q: string; a: string };
+
+export const faqs: Faq[] = [
+  {
+    q: "What kind of projects do you take on?",
+    a: "Marketing sites, portfolios, ecommerce storefronts, personal brands, and data dashboards. If it lives on the web and needs to convert, I can build it.",
+  },
+  {
+    q: "How long does a typical project take?",
+    a: "Most landing pages take one to two weeks, while full multi-page sites usually run three to five weeks depending on scope and content readiness.",
+  },
+  {
+    q: "Do you work with clients outside Nigeria?",
+    a: "Yes. I work with clients worldwide and keep communication clear across time zones, with regular updates at every stage.",
+  },
+  {
+    q: "What do you need from me to get started?",
+    a: "A short brief on your goals, any brand assets you have, and examples of work you love. We refine everything together in the discovery step.",
+  },
+];
