@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
 import { ContactCTA } from "@/components/site/ContactCTA";
 import { experiences } from "@/data/portfolio";
