@@ -51,9 +51,10 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  --font-display: "Anton", sans-serif;
-  --font-heading: "Archivo", sans-serif;
+  --font-display: "Inter", sans-serif;
+  --font-heading: "Inter", sans-serif;
   --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
 :root {
