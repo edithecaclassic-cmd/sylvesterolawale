@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { experiences } from "@/data/portfolio";
 import projectAxion from "@/assets/project-axion.jpg";
 import projectDeeplus from "@/assets/project-deeplus.jpg";
@@ -24,12 +25,17 @@ export function Experience() {
   return (
     <section id="experience" className="relative bg-ink py-20 text-ink-foreground md:py-28">
       <div ref={sectionRef} className="relative mx-auto max-w-7xl px-5 md:px-8">
-        <p className="font-display text-5xl text-white/[0.04] md:text-8xl">EXPERIENCE</p>
-        <div className="-mt-6 flex items-end justify-between gap-4 md:-mt-12">
+        <p className="font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary">
+          Background
+        </p>
+        <div className="mt-3 flex items-end justify-between gap-4">
           <h2 className="font-display text-4xl tracking-tight md:text-6xl">EXPERIENCE</h2>
-          <span className="text-sm font-medium text-ink-foreground/60">
-            4+ years of experience
-          </span>
+          <Link
+            to="/experience"
+            className="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-ink-foreground/80 transition-colors hover:border-primary hover:text-primary"
+          >
+            View All <ArrowUpRight className="h-4 w-4" />
+          </Link>
         </div>
 
         {/* floating preview that trails the cursor on hover */}
@@ -96,9 +102,16 @@ export function Experience() {
                   }}
                 >
                   <div className="overflow-hidden">
-                    <p className="max-w-2xl pb-7 pl-7 text-base text-ink-foreground/70">
-                      {e.detail}
-                    </p>
+                    <div className="max-w-2xl pb-7 pl-7">
+                      <p className="text-base text-ink-foreground/70">{e.detail}</p>
+                      <Link
+                        to="/experience/$id"
+                        params={{ id: e.id }}
+                        className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-transform hover:translate-x-1"
+                      >
+                        Read full story <ArrowUpRight className="h-4 w-4" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>

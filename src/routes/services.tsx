@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
 import { ContactCTA } from "@/components/site/ContactCTA";
+import { Footer } from "@/components/site/Footer";
 import { ProcessSection } from "@/components/site/ProcessSection";
 import { services } from "@/data/portfolio";
 
@@ -89,6 +90,7 @@ function ServicesPage() {
 
       <ProcessSection />
       <ContactCTA />
+      <Footer />
     </main>
   );
 }

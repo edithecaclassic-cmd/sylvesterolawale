@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowUpRight, Check } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
 import { ContactCTA } from "@/components/site/ContactCTA";
+import { Footer } from "@/components/site/Footer";
 import { getProject, projects } from "@/data/portfolio";
 
 export const Route = createFileRoute("/work/$id")({
@@ -170,6 +171,7 @@ function ProjectPage() {
       </section>
 
       <ContactCTA />
+      <Footer />
     </main>
   );
 }

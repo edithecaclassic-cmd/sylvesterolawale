@@ -153,42 +153,90 @@ export const services: Service[] = [
 ];
 
 export type Experience = {
+  id: string;
   org: string;
   role: string;
   period: string;
   detail: string;
+  summary: string;
+  highlights: string[];
+  skills: string[];
 };
 
 export const experiences: Experience[] = [
   {
+    id: "fiverr",
     org: "Fiverr Platform",
     role: "Freelance Web Designer & Vibe Coder",
     period: "2021 to Now",
     detail:
       "Delivering bold, conversion-focused websites for clients worldwide with consistent 5-star ratings.",
+    summary:
+      "As a top-rated freelancer on Fiverr, I partner with founders and brands across the globe to ship websites that look premium and convert. Every project is treated like a flagship product: strategy first, then a bold visual direction, then clean, fast code.",
+    highlights: [
+      "Maintained a consistent 5-star rating across global clients",
+      "Shipped landing pages, portfolios, and full marketing sites",
+      "Built repeatable design systems for faster delivery",
+      "Owned projects end to end, from brief to launch and support",
+    ],
+    skills: ["Web Design", "Conversion Strategy", "Framer", "Client Management"],
   },
   {
+    id: "peopleperhour",
     org: "PeoplePerHour",
     role: "Freelance Proposal Writer & Developer",
     period: "2022 to Now",
     detail:
       "Crafting winning proposals and shipping production-ready builds for startups and small businesses.",
+    summary:
+      "On PeoplePerHour I blend persuasive proposal writing with hands-on development, helping startups and small businesses turn early ideas into production-ready products that earn trust and revenue.",
+    highlights: [
+      "Wrote winning proposals that turned briefs into booked projects",
+      "Delivered production-ready builds for early-stage startups",
+      "Translated business goals into clear, scoped deliverables",
+      "Built long-term relationships through reliable delivery",
+    ],
+    skills: ["Proposal Writing", "Development", "Startups", "Scoping"],
   },
   {
+    id: "contra",
     org: "Contra",
     role: "Web Developer & Challenge Competitor",
     period: "2023 to Now",
     detail:
       "Competing in design challenges and building independent projects with a sharp editorial edge.",
+    summary:
+      "Contra is where I push my craft. I compete in design challenges, experiment with bold editorial layouts, and build independent projects that keep my work sharp and ahead of the curve.",
+    highlights: [
+      "Competed in community design challenges",
+      "Explored bold, editorial-led layout systems",
+      "Built independent passion projects and concepts",
+      "Stayed current with modern web design trends",
+    ],
+    skills: ["Editorial Design", "Experimentation", "Independent Projects"],
   },
   {
+    id: "oau",
     org: "Obafemi Awolowo University",
     role: "B.Eng Mechanical Engineering",
     period: "2020 to 2025",
     detail:
       "Engineering foundation that shapes a structured, problem-solving approach to every product I build.",
+    summary:
+      "My mechanical engineering background gave me a structured, first-principles approach to problem solving. It is the discipline behind every product I build: break the problem down, test, iterate, and ship something that actually works.",
+    highlights: [
+      "Trained in structured, first-principles problem solving",
+      "Applied analytical thinking to creative and technical work",
+      "Balanced rigorous academics with a growing freelance career",
+      "Developed strong project and time management habits",
+    ],
+    skills: ["Problem Solving", "Systems Thinking", "Project Management"],
   },
 ];
+
+export function getExperience(id: string) {
+  return experiences.find((e) => e.id === id);
+}
 
 export type Social = { label: string; href: string };
 
@@ -230,5 +278,81 @@ export const processSteps: ProcessStep[] = [
     title: "Launch",
     description:
       "We test across devices, polish the details, and ship. Then I track performance and iterate so the site keeps converting.",
+  },
+];
+
+export type Stat = { value: string; label: string };
+
+export const stats: Stat[] = [
+  { value: "50+", label: "Projects delivered" },
+  { value: "4+", label: "Years of experience" },
+  { value: "5.0", label: "Average client rating" },
+  { value: "24h", label: "Typical response time" },
+];
+
+export const marqueeItems: string[] = [
+  "Web Design",
+  "Vibe Coding",
+  "Framer",
+  "Webflow",
+  "Ecommerce",
+  "Branding",
+  "Data Analytics",
+  "Conversion",
+  "UI / UX",
+  "SEO",
+];
+
+export type Testimonial = {
+  quote: string;
+  name: string;
+  role: string;
+};
+
+export const testimonials: Testimonial[] = [
+  {
+    quote:
+      "Sylvester turned our vague idea into a website that finally feels like us. Bold, fast, and converting better than anything we had before.",
+    name: "Daniel A.",
+    role: "Founder, AXION Logistics",
+  },
+  {
+    quote:
+      "The whole process was smooth and genuinely creative. He understood the brand instantly and delivered ahead of schedule.",
+    name: "Caroline Ayeni",
+    role: "Business Coach",
+  },
+  {
+    quote:
+      "Our gallery-first site looks like a printed magazine. Clients keep telling us how premium it feels. Worth every naira.",
+    name: "Deeplus Media",
+    role: "Photography Studio",
+  },
+  {
+    quote:
+      "Clear communication, sharp eye for design, and clean code. Rare to find all three in one person.",
+    name: "Tomiwa O.",
+    role: "Startup Founder",
+  },
+];
+
+export type Faq = { q: string; a: string };
+
+export const faqs: Faq[] = [
+  {
+    q: "What kind of projects do you take on?",
+    a: "Marketing sites, portfolios, ecommerce storefronts, personal brands, and data dashboards. If it lives on the web and needs to convert, I can build it.",
+  },
+  {
+    q: "How long does a typical project take?",
+    a: "Most landing pages take one to two weeks, while full multi-page sites usually run three to five weeks depending on scope and content readiness.",
+  },
+  {
+    q: "Do you work with clients outside Nigeria?",
+    a: "Yes. I work with clients worldwide and keep communication clear across time zones, with regular updates at every stage.",
+  },
+  {
+    q: "What do you need from me to get started?",
+    a: "A short brief on your goals, any brand assets you have, and examples of work you love. We refine everything together in the discovery step.",
   },
 ];
