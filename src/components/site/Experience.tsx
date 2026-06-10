@@ -102,9 +102,16 @@ export function Experience() {
                   }}
                 >
                   <div className="overflow-hidden">
-                    <p className="max-w-2xl pb-7 pl-7 text-base text-ink-foreground/70">
-                      {e.detail}
-                    </p>
+                    <div className="max-w-2xl pb-7 pl-7">
+                      <p className="text-base text-ink-foreground/70">{e.detail}</p>
+                      <Link
+                        to="/experience/$id"
+                        params={{ id: e.id }}
+                        className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-transform hover:translate-x-1"
+                      >
+                        Read full story <ArrowUpRight className="h-4 w-4" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
