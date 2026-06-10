@@ -153,42 +153,90 @@ export const services: Service[] = [
 ];
 
 export type Experience = {
+  id: string;
   org: string;
   role: string;
   period: string;
   detail: string;
+  summary: string;
+  highlights: string[];
+  skills: string[];
 };
 
 export const experiences: Experience[] = [
   {
+    id: "fiverr",
     org: "Fiverr Platform",
     role: "Freelance Web Designer & Vibe Coder",
     period: "2021 to Now",
     detail:
       "Delivering bold, conversion-focused websites for clients worldwide with consistent 5-star ratings.",
+    summary:
+      "As a top-rated freelancer on Fiverr, I partner with founders and brands across the globe to ship websites that look premium and convert. Every project is treated like a flagship product: strategy first, then a bold visual direction, then clean, fast code.",
+    highlights: [
+      "Maintained a consistent 5-star rating across global clients",
+      "Shipped landing pages, portfolios, and full marketing sites",
+      "Built repeatable design systems for faster delivery",
+      "Owned projects end to end, from brief to launch and support",
+    ],
+    skills: ["Web Design", "Conversion Strategy", "Framer", "Client Management"],
   },
   {
+    id: "peopleperhour",
     org: "PeoplePerHour",
     role: "Freelance Proposal Writer & Developer",
     period: "2022 to Now",
     detail:
       "Crafting winning proposals and shipping production-ready builds for startups and small businesses.",
+    summary:
+      "On PeoplePerHour I blend persuasive proposal writing with hands-on development, helping startups and small businesses turn early ideas into production-ready products that earn trust and revenue.",
+    highlights: [
+      "Wrote winning proposals that turned briefs into booked projects",
+      "Delivered production-ready builds for early-stage startups",
+      "Translated business goals into clear, scoped deliverables",
+      "Built long-term relationships through reliable delivery",
+    ],
+    skills: ["Proposal Writing", "Development", "Startups", "Scoping"],
   },
   {
+    id: "contra",
     org: "Contra",
     role: "Web Developer & Challenge Competitor",
     period: "2023 to Now",
     detail:
       "Competing in design challenges and building independent projects with a sharp editorial edge.",
+    summary:
+      "Contra is where I push my craft. I compete in design challenges, experiment with bold editorial layouts, and build independent projects that keep my work sharp and ahead of the curve.",
+    highlights: [
+      "Competed in community design challenges",
+      "Explored bold, editorial-led layout systems",
+      "Built independent passion projects and concepts",
+      "Stayed current with modern web design trends",
+    ],
+    skills: ["Editorial Design", "Experimentation", "Independent Projects"],
   },
   {
+    id: "oau",
     org: "Obafemi Awolowo University",
     role: "B.Eng Mechanical Engineering",
     period: "2020 to 2025",
     detail:
       "Engineering foundation that shapes a structured, problem-solving approach to every product I build.",
+    summary:
+      "My mechanical engineering background gave me a structured, first-principles approach to problem solving. It is the discipline behind every product I build: break the problem down, test, iterate, and ship something that actually works.",
+    highlights: [
+      "Trained in structured, first-principles problem solving",
+      "Applied analytical thinking to creative and technical work",
+      "Balanced rigorous academics with a growing freelance career",
+      "Developed strong project and time management habits",
+    ],
+    skills: ["Problem Solving", "Systems Thinking", "Project Management"],
   },
 ];
+
+export function getExperience(id: string) {
+  return experiences.find((e) => e.id === id);
+}
 
 export type Social = { label: string; href: string };
 
