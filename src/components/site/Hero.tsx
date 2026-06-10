@@ -111,7 +111,7 @@ export function Hero() {
             href={s.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="glass animate-rise-in rounded-full px-5 py-2.5 text-center text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:text-primary"
+            className="glass animate-rise-in rounded-full px-5 py-2.5 text-center font-mono text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:text-primary"
             style={{ animationDelay: `${0.5 + i * 0.06}s` }}
           >
             {s.label}
