@@ -15,6 +15,7 @@ import { Route as ExperienceRouteImport } from './routes/experience'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as WorkIndexRouteImport } from './routes/work.index'
 import { Route as WorkIdRouteImport } from './routes/work.$id'
+import { Route as ExperienceIdRouteImport } from './routes/experience.$id'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -46,29 +47,37 @@ const WorkIdRoute = WorkIdRouteImport.update({
   path: '/work/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExperienceIdRoute = ExperienceIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ExperienceRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/experience': typeof ExperienceRoute
+  '/experience': typeof ExperienceRouteWithChildren
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/experience/$id': typeof ExperienceIdRoute
   '/work/$id': typeof WorkIdRoute
   '/work/': typeof WorkIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/experience': typeof ExperienceRoute
+  '/experience': typeof ExperienceRouteWithChildren
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/experience/$id': typeof ExperienceIdRoute
   '/work/$id': typeof WorkIdRoute
   '/work': typeof WorkIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/experience': typeof ExperienceRoute
+  '/experience': typeof ExperienceRouteWithChildren
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/experience/$id': typeof ExperienceIdRoute
   '/work/$id': typeof WorkIdRoute
   '/work/': typeof WorkIndexRoute
 }
@@ -79,23 +88,32 @@ export interface FileRouteTypes {
     | '/experience'
     | '/services'
     | '/sitemap.xml'
+    | '/experience/$id'
     | '/work/$id'
     | '/work/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/experience' | '/services' | '/sitemap.xml' | '/work/$id' | '/work'
+  to:
+    | '/'
+    | '/experience'
+    | '/services'
+    | '/sitemap.xml'
+    | '/experience/$id'
+    | '/work/$id'
+    | '/work'
   id:
     | '__root__'
     | '/'
     | '/experience'
     | '/services'
     | '/sitemap.xml'
+    | '/experience/$id'
     | '/work/$id'
     | '/work/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ExperienceRoute: typeof ExperienceRoute
+  ExperienceRoute: typeof ExperienceRouteWithChildren
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   WorkIdRoute: typeof WorkIdRoute
@@ -146,12 +164,31 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/experience/$id': {
+      id: '/experience/$id'
+      path: '/$id'
+      fullPath: '/experience/$id'
+      preLoaderRoute: typeof ExperienceIdRouteImport
+      parentRoute: typeof ExperienceRoute
+    }
   }
 }
 
+interface ExperienceRouteChildren {
+  ExperienceIdRoute: typeof ExperienceIdRoute
+}
+
+const ExperienceRouteChildren: ExperienceRouteChildren = {
+  ExperienceIdRoute: ExperienceIdRoute,
+}
+
+const ExperienceRouteWithChildren = ExperienceRoute._addFileChildren(
+  ExperienceRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ExperienceRoute: ExperienceRoute,
+  ExperienceRoute: ExperienceRouteWithChildren,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   WorkIdRoute: WorkIdRoute,
@@ -160,3 +197,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
