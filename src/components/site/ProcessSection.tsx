@@ -59,15 +59,15 @@ export function ProcessSection() {
           The Process
         </p>
         <div className="mt-3 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
-          <h2 className="font-display text-4xl tracking-tight md:text-6xl">HOW I WORK</h2>
+          <h2 className="font-display text-3xl tracking-tight md:text-5xl">HOW I WORK</h2>
           <span className="max-w-xs text-sm text-ink-foreground/60">
             A clear, four-step system that turns an idea into a fast, bold, converting product.
           </span>
         </div>
 
-        <div ref={trackRef} className="relative mt-16 pl-14 md:pl-20">
-          {/* thermometer track */}
-          <div className="absolute left-[26px] top-2 h-full w-[3px] rounded-full bg-white/10 md:left-[34px]">
+        <div ref={trackRef} className="relative mt-16 pl-16 md:pl-24">
+          {/* thermometer track — centered behind the icon column */}
+          <div className="absolute left-7 top-2 h-full w-[3px] -translate-x-1/2 rounded-full bg-white/10 md:left-9">
             {/* mercury bulb at the bottom */}
             <span className="absolute -bottom-3 left-1/2 h-6 w-6 -translate-x-1/2 rounded-full bg-primary/30" />
             {/* flowing mercury fill */}
@@ -96,12 +96,13 @@ export function ProcessSection() {
                     transform: visible ? "translateY(0)" : "translateY(28px)",
                   }}
                 >
-                  {/* node dot on the track */}
+                  {/* node icon centered on the line; opaque so the line stops at its
+                      top and continues at its bottom rather than showing through */}
                   <span
-                    className={`absolute -left-14 top-1 flex h-12 w-12 items-center justify-center rounded-2xl border transition-all duration-500 md:-left-20 ${
+                    className={`absolute -left-9 top-1 flex h-12 w-12 -translate-x-1/2 items-center justify-center rounded-2xl border transition-all duration-500 md:-left-[60px] ${
                       reached
                         ? "border-primary/60 bg-primary text-primary-foreground shadow-[0_0_24px_oklch(0.66_0.21_41/0.7)]"
-                        : "glass-strong border-white/10 text-ink-foreground/60"
+                        : "border-white/15 bg-ink text-ink-foreground/60"
                     }`}
                   >
                     <Icon className="h-5 w-5" />
@@ -131,6 +132,7 @@ export function ProcessSection() {
             })}
           </div>
         </div>
+
       </div>
     </section>
   );

@@ -68,7 +68,7 @@ function ExperienceDetail() {
           <p className="mt-6 font-mono text-xs font-bold uppercase tracking-[0.3em] text-primary">
             {item.period}
           </p>
-          <h1 className="mt-3 font-display text-4xl tracking-tight md:text-7xl">{item.org}</h1>
+          <h1 className="mt-3 font-display text-3xl tracking-tight md:text-6xl">{item.org}</h1>
           <p className="mt-3 text-lg font-semibold text-primary">{item.role}</p>
         </div>
       </header>

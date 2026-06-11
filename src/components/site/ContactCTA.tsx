@@ -12,7 +12,7 @@ export function ContactCTA() {
           </span>
           Available for New Project
         </span>
-        <h2 className="mt-6 font-display text-5xl leading-[0.9] tracking-tight text-white md:text-8xl">
+        <h2 className="mt-6 font-display text-4xl leading-[0.9] tracking-tight text-white md:text-7xl">
           HAVE A PROJECT IN MIND?
         </h2>
         <p className="mx-auto mt-5 max-w-xl text-base text-white/80 md:text-lg">

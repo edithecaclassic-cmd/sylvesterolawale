@@ -10,17 +10,19 @@ import { Footer } from "@/components/site/Footer";
 import { StatsBand } from "@/components/site/StatsBand";
 import { Testimonials } from "@/components/site/Testimonials";
 import { FAQ } from "@/components/site/FAQ";
+import { StackReveal } from "@/components/site/StackReveal";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Sylvester Olaleye | Vibe Coder & Website Developer" },
+      { title: "Sylvester Olaleye | Website Designer & AI Automation Expert" },
       {
         name: "description",
         content:
-          "Sylvester Olaleye builds fast, bold, conversion-focused websites. Web design, ecommerce, branding, and data analytics for ambitious brands.",
+          "Sylvester Olaleye is a website designer, AI automation and workflow expert, ecommerce specialist and virtual assistant building fast, bold, conversion-focused experiences.",
       },
-      { property: "og:title", content: "Sylvester Olaleye | Vibe Coder & Website Developer" },
+      { property: "og:title", content: "Sylvester Olaleye | Website Designer & AI Automation Expert" },
       {
         property: "og:description",
         content:
@@ -41,11 +43,14 @@ function Index() {
       <SelectedWork />
       <Services />
       <ProcessSection />
-      <Testimonials />
-      <Experience />
-      <FAQ />
-      <ContactCTA />
-      <Footer />
+      <StackReveal>
+        <Testimonials />
+        <Experience />
+        <FAQ />
+        <ContactCTA />
+        <Footer />
+      </StackReveal>
     </main>
   );
 }
+

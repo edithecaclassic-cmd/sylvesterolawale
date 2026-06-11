@@ -71,7 +71,7 @@ function ProjectPage() {
             </span>
             <span className="text-sm text-ink-foreground/60">{p.year}</span>
           </div>
-          <h1 className="mt-4 font-display text-5xl tracking-tight md:text-8xl">{p.title}</h1>
+          <h1 className="mt-4 font-display text-4xl tracking-tight md:text-7xl">{p.title}</h1>
           <p className="mt-4 max-w-2xl text-lg text-ink-foreground/75">{p.description}</p>
           {p.liveUrl && (
             <a

@@ -29,7 +29,7 @@ export function Experience() {
           Background
         </p>
         <div className="mt-3 flex items-end justify-between gap-4">
-          <h2 className="font-display text-4xl tracking-tight md:text-6xl">EXPERIENCE</h2>
+          <h2 className="font-display text-3xl tracking-tight md:text-5xl">EXPERIENCE</h2>
           <Link
             to="/experience"
             className="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-ink-foreground/80 transition-colors hover:border-primary hover:text-primary"
