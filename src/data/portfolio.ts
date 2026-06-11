@@ -127,10 +127,16 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    title: "Vibe Coding & Web Development",
+    title: "Website Design & Development",
     description:
-      "I build fast, bold, conversion-focused websites using Framer, Webflow, and modern builders. From first concept to launch day: clean, modern, and client-ready.",
+      "I design and build fast, bold, conversion-focused websites using Framer, Webflow, and modern builders. From first concept to launch day: clean, modern, and client-ready.",
     image: projectAxion,
+  },
+  {
+    title: "AI Automation & Workflow Design",
+    description:
+      "I design intelligent automations and workflows that remove repetitive work, connect your tools, and let your business run smoothly with less manual effort.",
+    image: projectForma,
   },
   {
     title: "Ecommerce Shop Design & Optimization",
@@ -139,15 +145,9 @@ export const services: Service[] = [
     image: projectDeeplus,
   },
   {
-    title: "Data Analytics & Reporting",
+    title: "Virtual Assistance & Operations",
     description:
-      "Clear dashboards and reports that make your numbers easy to read, so every business decision is backed by real insight.",
-    image: projectForma,
-  },
-  {
-    title: "Branding & Identity",
-    description:
-      "Memorable brand systems with logos, type, and color built to feel cohesive everywhere your business shows up.",
+      "Reliable virtual assistance for busy founders: inbox and calendar management, research, data entry, and the day-to-day operations that keep things moving.",
     image: projectCaroline,
   },
 ];
@@ -167,7 +167,7 @@ export const experiences: Experience[] = [
   {
     id: "fiverr",
     org: "Fiverr Platform",
-    role: "Freelance Web Designer & Vibe Coder",
+    role: "Freelance Website Designer & Automation Expert",
     period: "2021 to Now",
     detail:
       "Delivering bold, conversion-focused websites for clients worldwide with consistent 5-star ratings.",
@@ -291,13 +291,13 @@ export const stats: Stat[] = [
 ];
 
 export const marqueeItems: string[] = [
-  "Web Design",
-  "Vibe Coding",
+  "Website Design",
+  "AI Automation",
+  "Workflow Design",
   "Framer",
   "Webflow",
   "Ecommerce",
-  "Branding",
-  "Data Analytics",
+  "Virtual Assistant",
   "Conversion",
   "UI / UX",
   "SEO",
