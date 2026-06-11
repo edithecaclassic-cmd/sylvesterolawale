@@ -3,7 +3,7 @@ import { Plus, Minus } from "lucide-react";
 import { faqs } from "@/data/portfolio";
 
 export function FAQ() {
-  const [open, setOpen] = useState(0);
+  const [open, setOpen] = useState(-1);
 
   return (
     <section className="relative bg-background py-20 md:py-28">
