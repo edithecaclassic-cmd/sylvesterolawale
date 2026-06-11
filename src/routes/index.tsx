@@ -41,11 +41,14 @@ function Index() {
       <SelectedWork />
       <Services />
       <ProcessSection />
-      <Testimonials />
-      <Experience />
-      <FAQ />
-      <ContactCTA />
-      <Footer />
+      <StackReveal>
+        <Testimonials />
+        <Experience />
+        <FAQ />
+        <ContactCTA />
+        <Footer />
+      </StackReveal>
     </main>
   );
 }
+
