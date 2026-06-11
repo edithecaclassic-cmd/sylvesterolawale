@@ -30,8 +30,8 @@ export function Footer() {
             </Link>
             <p className="mt-5 font-display text-2xl tracking-tight">SYLVESTER OLALEYE</p>
             <p className="mt-3 max-w-xs text-sm text-ink-foreground/60">
-              Vibe coder and website developer building fast, bold, conversion-focused digital
-              experiences for ambitious brands.
+              Website designer, AI automation and workflow expert, ecommerce specialist and
+              virtual assistant building fast, bold, conversion-focused experiences.
             </p>
           </div>
 
