@@ -63,7 +63,7 @@ export function Hero() {
 
       {/* Content overlay */}
       <div className="pointer-events-none relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-end px-5 pb-14 pt-28 md:px-8 md:pb-20">
-        <h1 className="font-display text-[13vw] leading-[0.85] tracking-tight md:text-[9vw] lg:text-[7.5rem]">
+        <h1 className="font-display text-[11vw] leading-[0.85] tracking-tight md:text-[7.5vw] lg:text-[6rem]">
           <span className="block text-white animate-rise-in" style={{ animationDelay: "0.05s" }}>
             SYLVESTER
           </span>
@@ -76,10 +76,10 @@ export function Hero() {
         </h1>
 
         <div className="mt-6 max-w-md animate-rise-in" style={{ animationDelay: "0.3s" }}>
-          <p className="font-mono text-sm font-bold uppercase tracking-[0.25em] text-primary">
-            Vibe Coder & Website Developer
+          <p className="font-mono text-xs uppercase tracking-[0.22em] text-primary">
+            Website Designer · AI Automation & Workflow Expert · Ecommerce & Virtual Assistant
           </p>
-          <p className="mt-3 text-base text-white/80">
+          <p className="mt-3 text-sm text-white/80">
             Designing digital experiences that are fast, bold, and conversion-focused.
           </p>
         </div>
