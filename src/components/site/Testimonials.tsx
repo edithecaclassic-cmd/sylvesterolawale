@@ -23,7 +23,7 @@ export function Testimonials() {
         <p className="font-mono text-xs font-bold uppercase tracking-[0.35em] text-primary">
           Kind Words
         </p>
-        <h2 className="mt-3 max-w-2xl font-display text-4xl tracking-tight md:text-6xl">
+        <h2 className="mt-3 max-w-2xl font-display text-3xl tracking-tight md:text-5xl">
           WHAT CLIENTS SAY
         </h2>
 

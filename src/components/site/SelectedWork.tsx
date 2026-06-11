@@ -10,7 +10,7 @@ export function SelectedWork() {
           PORTFOLIO
         </p>
         <div className="-mt-6 flex flex-col items-start justify-between gap-4 md:-mt-12 md:flex-row md:items-end">
-          <h2 className="font-display text-4xl tracking-tight md:text-6xl">
+          <h2 className="font-display text-3xl tracking-tight md:text-5xl">
             SELECTED WORK
           </h2>
           <Link

@@ -35,7 +35,7 @@ function ServicesPage() {
           <p className="font-heading text-sm font-bold uppercase tracking-[0.25em] text-primary">
             What I offer
           </p>
-          <h1 className="mt-3 font-display text-5xl tracking-tight md:text-8xl">SERVICES</h1>
+          <h1 className="mt-3 font-display text-4xl tracking-tight md:text-7xl">SERVICES</h1>
           <p className="mt-4 max-w-xl text-ink-foreground/70">
             End-to-end design and development, tuned for speed, clarity, and conversion.
           </p>

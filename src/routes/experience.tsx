@@ -34,7 +34,7 @@ function ExperiencePage() {
           <p className="font-heading text-sm font-bold uppercase tracking-[0.25em] text-primary">
             Background
           </p>
-          <h1 className="mt-3 font-display text-5xl tracking-tight md:text-8xl">EXPERIENCE</h1>
+          <h1 className="mt-3 font-display text-4xl tracking-tight md:text-7xl">EXPERIENCE</h1>
           <p className="mt-4 max-w-xl text-ink-foreground/70">
             4+ years of freelance work and an engineering foundation that shapes how I build.
           </p>

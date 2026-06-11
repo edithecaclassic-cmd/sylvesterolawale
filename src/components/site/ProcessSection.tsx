@@ -59,7 +59,7 @@ export function ProcessSection() {
           The Process
         </p>
         <div className="mt-3 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
-          <h2 className="font-display text-4xl tracking-tight md:text-6xl">HOW I WORK</h2>
+          <h2 className="font-display text-3xl tracking-tight md:text-5xl">HOW I WORK</h2>
           <span className="max-w-xs text-sm text-ink-foreground/60">
             A clear, four-step system that turns an idea into a fast, bold, converting product.
           </span>

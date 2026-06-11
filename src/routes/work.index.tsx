@@ -34,7 +34,7 @@ function WorkPage() {
           <p className="font-heading text-sm font-bold uppercase tracking-[0.25em] text-primary">
             Portfolio
           </p>
-          <h1 className="mt-3 font-display text-5xl tracking-tight md:text-8xl">ALL WORK</h1>
+          <h1 className="mt-3 font-display text-4xl tracking-tight md:text-7xl">ALL WORK</h1>
           <p className="mt-4 max-w-xl text-ink-foreground/70">
             A selection of websites I have designed and built, from real client launches to
             speculative redesigns.
