@@ -3,7 +3,15 @@ import { ArrowLeft, ArrowUpRight, Check, Sparkles } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
 import { ContactCTA } from "@/components/site/ContactCTA";
 import { Footer } from "@/components/site/Footer";
-import { getService, services, getProject } from "@/data/portfolio";
+import {
+  getService,
+  services,
+  getProject,
+  type Service,
+  type ServiceCapability,
+  type ServiceWorkflow,
+  type Project,
+} from "@/data/portfolio";
 
 export const Route = createFileRoute("/services/$id")({
   loader: ({ params }) => {
