@@ -80,9 +80,16 @@ export function Services() {
                   }}
                 >
                   <div className="overflow-hidden">
-                    <p className="max-w-2xl px-1 pb-7 pl-1 text-base text-muted-foreground md:pl-14">
-                      {s.description}
-                    </p>
+                    <div className="max-w-2xl px-1 pb-7 pl-1 md:pl-14">
+                      <p className="text-base text-muted-foreground">{s.description}</p>
+                      <Link
+                        to="/services/$id"
+                        params={{ id: s.slug }}
+                        className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:underline"
+                      >
+                        Learn more <ArrowUpRight className="h-4 w-4" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
