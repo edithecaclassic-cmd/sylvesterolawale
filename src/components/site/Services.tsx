@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, Plus, X } from "lucide-react";
 import { services } from "@/data/portfolio";
 
@@ -11,12 +12,12 @@ export function Services() {
         <p className="font-display text-5xl text-foreground/5 md:text-8xl">SERVICE</p>
         <div className="-mt-6 flex flex-col items-start justify-between gap-4 md:-mt-12 md:flex-row md:items-end">
           <h2 className="font-display text-3xl tracking-tight md:text-5xl">SERVICE</h2>
-          <a
-            href="#services"
+          <Link
+            to="/services"
             className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-sm font-semibold transition-colors hover:border-primary hover:text-primary"
           >
             See All Services <ArrowUpRight className="h-4 w-4" />
-          </a>
+          </Link>
         </div>
 
         <div className="mt-12 divide-y divide-border border-y border-border">
@@ -79,9 +80,16 @@ export function Services() {
                   }}
                 >
                   <div className="overflow-hidden">
-                    <p className="max-w-2xl px-1 pb-7 pl-1 text-base text-muted-foreground md:pl-14">
-                      {s.description}
-                    </p>
+                    <div className="max-w-2xl px-1 pb-7 pl-1 md:pl-14">
+                      <p className="text-base text-muted-foreground">{s.description}</p>
+                      <Link
+                        to="/services/$id"
+                        params={{ id: s.slug }}
+                        className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:underline"
+                      >
+                        Learn more <ArrowUpRight className="h-4 w-4" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>

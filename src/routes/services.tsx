@@ -45,8 +45,10 @@ function ServicesPage() {
       <section className="bg-background py-16 md:py-24">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-5 md:grid-cols-2 md:px-8">
           {services.map((s, i) => (
-            <div
+            <Link
               key={s.title}
+              to="/services/$id"
+              params={{ id: s.slug }}
               className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-glow animate-rise-in"
               style={{ animationDelay: `${i * 0.08}s` }}
             >
@@ -66,8 +68,11 @@ function ServicesPage() {
                   {s.title}
                 </h2>
                 <p className="mt-3 text-sm text-muted-foreground">{s.description}</p>
+                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+                  Learn more <ArrowUpRight className="h-4 w-4" />
+                </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
