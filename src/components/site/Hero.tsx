@@ -62,25 +62,22 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-64 bg-gradient-to-t from-black/70 to-transparent" />
 
       {/* Content overlay */}
-      <div className="pointer-events-none relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-end px-5 pb-14 pt-28 md:px-8 md:pb-20">
-        <h1 className="font-display text-[11vw] leading-[0.85] tracking-tight md:text-[7.5vw] lg:text-[6rem]">
+      <div className="pointer-events-none relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-end px-5 pb-16 pt-28 md:px-8 md:pb-20">
+        <h1 className="font-display text-[16vw] leading-[0.85] tracking-tight mix-blend-difference sm:text-[13vw] md:text-[8vw] lg:text-[7rem]">
           <span className="block text-white animate-rise-in" style={{ animationDelay: "0.05s" }}>
             SYLVESTER
           </span>
           <span
-            className="block text-primary animate-rise-in"
+            className="block text-white animate-rise-in"
             style={{ animationDelay: "0.18s" }}
           >
             OLALEYE
           </span>
         </h1>
 
-        <div className="mt-6 max-w-md animate-rise-in" style={{ animationDelay: "0.3s" }}>
-          <p className="font-mono text-xs uppercase tracking-[0.22em] text-primary">
-            Website Designer · AI Automation & Workflow Expert · Ecommerce & Virtual Assistant
-          </p>
-          <p className="mt-3 text-sm text-white/80">
-            Designing digital experiences that are fast, bold, and conversion-focused.
+        <div className="mt-5 max-w-xl animate-rise-in" style={{ animationDelay: "0.3s" }}>
+          <p className="font-sans text-sm text-white sm:text-base">
+            Website Designer · AI Automation &amp; Workflow Expert · Ecommerce &amp; Virtual Assistant
           </p>
         </div>
 
@@ -103,8 +100,8 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Vertical glass social rail, bottom-right */}
-      <div className="pointer-events-auto absolute bottom-6 right-4 z-20 flex flex-col items-stretch gap-2 md:bottom-10 md:right-8">
+      {/* Vertical glass social rail, bottom-right (hidden on mobile) */}
+      <div className="pointer-events-auto absolute bottom-10 right-8 z-20 hidden flex-col items-stretch gap-2 md:flex">
         {socials.map((s, i) => (
           <a
             key={s.label}
