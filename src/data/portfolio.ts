@@ -119,38 +119,309 @@ export function getProject(id: string) {
   return projects.find((p) => p.id === id);
 }
 
+export type ServiceCapability = { title: string; description: string };
+export type ServiceWorkflow = { step: string; title: string; description: string };
+
 export type Service = {
+  slug: string;
   title: string;
+  eyebrow: string;
   description: string;
+  overview: string;
   image: string;
+  skills: string[];
+  capabilities: ServiceCapability[];
+  workflow: ServiceWorkflow[];
+  outcomes: { label: string; value: string }[];
+  featured: string[];
 };
 
 export const services: Service[] = [
   {
+    slug: "website-design",
     title: "Website Design & Development",
+    eyebrow: "Design & Build",
     description:
       "I design and build fast, bold, conversion-focused websites using Framer, Webflow, and modern builders. From first concept to launch day: clean, modern, and client-ready.",
+    overview:
+      "I turn ideas into websites that look premium and actually convert. Every build starts with strategy, moves through a bold visual direction, and ships as clean, fast, responsive code. Whether it is a single landing page or a full multi-page marketing site, the goal is the same: a site that feels unmistakably yours and earns real results.",
     image: projectAxion,
+    skills: [
+      "Framer",
+      "Webflow",
+      "Responsive UI / UX",
+      "Design Systems",
+      "Conversion Copy Layout",
+      "Motion & Micro-interactions",
+      "SEO Foundations",
+      "Performance Optimisation",
+    ],
+    capabilities: [
+      {
+        title: "Landing pages that convert",
+        description:
+          "High-impact single pages built around one clear action, tuned for speed and clarity so visitors know exactly what to do next.",
+      },
+      {
+        title: "Full marketing sites",
+        description:
+          "Multi-page sites with a consistent design system, reusable components, and a structure that scales as your brand grows.",
+      },
+      {
+        title: "Design systems",
+        description:
+          "Reusable typography, colour, and component libraries that keep every page on-brand and speed up future updates.",
+      },
+      {
+        title: "Motion & polish",
+        description:
+          "Smooth scroll animations and micro-interactions that make a site feel alive without hurting performance.",
+      },
+    ],
+    workflow: [
+      {
+        step: "01",
+        title: "Discover",
+        description: "Deep dive into your goals, audience, and competitors to ground every decision in strategy.",
+      },
+      {
+        step: "02",
+        title: "Design",
+        description: "Wireframes then bold high-fidelity mockups, refined until the look feels unmistakably yours.",
+      },
+      {
+        step: "03",
+        title: "Build",
+        description: "Pixel-perfect, responsive development with smooth motion, clean code, and SEO baked in.",
+      },
+      {
+        step: "04",
+        title: "Launch & iterate",
+        description: "Test across devices, ship, then track performance and refine so the site keeps converting.",
+      },
+    ],
+    outcomes: [
+      { label: "Faster load times", value: "2.1s" },
+      { label: "More conversions", value: "+38%" },
+      { label: "Projects delivered", value: "50+" },
+    ],
+    featured: ["axion-logistics", "deeplus-media", "forma-interior"],
   },
   {
+    slug: "ai-automation",
     title: "AI Automation & Workflow Design",
+    eyebrow: "Automate & Scale",
     description:
       "I design intelligent automations and workflows that remove repetitive work, connect your tools, and let your business run smoothly with less manual effort.",
+    overview:
+      "Repetitive work quietly drains time and money. I map your operations, then design intelligent automations that connect your tools and let data flow on its own, from lead capture to follow-up to reporting. The result is a business that runs smoothly with far less manual effort and fewer dropped balls.",
     image: projectForma,
+    skills: [
+      "Make (Integromat)",
+      "Zapier",
+      "n8n",
+      "OpenAI / LLM APIs",
+      "Webhooks & APIs",
+      "Airtable / Notion",
+      "CRM Automation",
+      "Process Mapping",
+    ],
+    capabilities: [
+      {
+        title: "Workflow automation",
+        description:
+          "Connect your apps so tasks trigger automatically, replacing copy-paste work with reliable, hands-off flows.",
+      },
+      {
+        title: "AI-powered assistants",
+        description:
+          "Custom GPT-driven helpers that draft replies, summarise, classify, and answer questions using your own data.",
+      },
+      {
+        title: "Lead & CRM pipelines",
+        description:
+          "Automated capture, enrichment, and follow-up so no lead slips through and every contact is nurtured.",
+      },
+      {
+        title: "Reporting & ops",
+        description:
+          "Dashboards and scheduled reports that pull from all your tools, so the numbers are always up to date.",
+      },
+    ],
+    workflow: [
+      {
+        step: "01",
+        title: "Map",
+        description: "Audit your current process and pinpoint the repetitive tasks worth automating first.",
+      },
+      {
+        step: "02",
+        title: "Design",
+        description: "Architect the flow: triggers, logic, AI steps, and how each tool connects to the next.",
+      },
+      {
+        step: "03",
+        title: "Build & test",
+        description: "Build the automation, test edge cases, and add safeguards so it runs reliably unattended.",
+      },
+      {
+        step: "04",
+        title: "Handover",
+        description: "Document everything, train your team, and monitor so the system keeps saving you hours.",
+      },
+    ],
+    outcomes: [
+      { label: "Hours saved weekly", value: "15+" },
+      { label: "Manual tasks removed", value: "80%" },
+      { label: "Tools connected", value: "10+" },
+    ],
+    featured: ["forma-interior", "axion-logistics"],
   },
   {
+    slug: "ecommerce",
     title: "Ecommerce Shop Design & Optimization",
+    eyebrow: "Sell More",
     description:
       "Storefronts that turn visitors into buyers. Streamlined product pages, frictionless checkout, and layouts tuned for higher conversion.",
+    overview:
+      "A beautiful store is only worth it if it sells. I design and optimise storefronts around the buyer journey: clear product pages, trust signals, and a frictionless checkout that removes every excuse not to buy. Then I refine based on real behaviour so conversion keeps climbing after launch.",
     image: projectDeeplus,
+    skills: [
+      "Shopify",
+      "Framer / Webflow Commerce",
+      "Product Page Design",
+      "Checkout Optimisation",
+      "Conversion Rate Optimisation",
+      "Trust & Social Proof",
+      "Analytics",
+      "Email Capture",
+    ],
+    capabilities: [
+      {
+        title: "Storefront design",
+        description:
+          "On-brand, mobile-first stores that make products look irresistible and browsing effortless.",
+      },
+      {
+        title: "Product pages that sell",
+        description:
+          "Clear layouts, strong imagery, reviews, and buy buttons placed exactly where buyers expect them.",
+      },
+      {
+        title: "Checkout optimisation",
+        description:
+          "Streamlined, low-friction checkout flows that reduce abandonment and recover lost carts.",
+      },
+      {
+        title: "Conversion tuning",
+        description:
+          "Data-led tweaks to layout, copy, and offers based on how real shoppers actually behave.",
+      },
+    ],
+    workflow: [
+      {
+        step: "01",
+        title: "Audit",
+        description: "Review your store, funnel, and analytics to find where visitors drop off and why.",
+      },
+      {
+        step: "02",
+        title: "Design",
+        description: "Craft product and category pages built around trust, clarity, and the path to purchase.",
+      },
+      {
+        step: "03",
+        title: "Optimise",
+        description: "Streamline checkout, add social proof, and tune every step for higher conversion.",
+      },
+      {
+        step: "04",
+        title: "Grow",
+        description: "Track performance, run improvements, and iterate so revenue keeps compounding.",
+      },
+    ],
+    outcomes: [
+      { label: "Higher conversion", value: "+29%" },
+      { label: "Cart abandonment", value: "-22%" },
+      { label: "Avg. order value", value: "+18%" },
+    ],
+    featured: ["deeplus-media", "caroline-ayeni"],
   },
   {
+    slug: "virtual-assistance",
     title: "Virtual Assistance & Operations",
+    eyebrow: "Stay Organised",
     description:
       "Reliable virtual assistance for busy founders: inbox and calendar management, research, data entry, and the day-to-day operations that keep things moving.",
+    overview:
+      "Founders should spend time on the work only they can do. I take the rest off your plate, from inbox and calendar to research, data entry, and everyday operations, with clear communication and dependable follow-through. Think of it as a calm, organised engine running quietly behind your business.",
     image: projectCaroline,
+    skills: [
+      "Inbox & Calendar Management",
+      "Research & Data Entry",
+      "Notion / Airtable",
+      "Google Workspace",
+      "Project Coordination",
+      "Customer Support",
+      "SOP Documentation",
+      "Scheduling",
+    ],
+    capabilities: [
+      {
+        title: "Inbox & calendar",
+        description:
+          "A tidy inbox and a calendar that runs itself, with meetings booked and priorities surfaced for you.",
+      },
+      {
+        title: "Research & data",
+        description:
+          "Accurate research, list building, and data entry delivered clean and ready to use.",
+      },
+      {
+        title: "Operations support",
+        description:
+          "Day-to-day coordination, task tracking, and follow-ups that keep projects moving forward.",
+      },
+      {
+        title: "Systems & SOPs",
+        description:
+          "Documented processes and templates so your operations stay consistent as you grow.",
+      },
+    ],
+    workflow: [
+      {
+        step: "01",
+        title: "Onboard",
+        description: "Understand your tools, priorities, and preferences so I can work the way you do.",
+      },
+      {
+        step: "02",
+        title: "Organise",
+        description: "Set up systems for inbox, calendar, and tasks to bring order to the chaos.",
+      },
+      {
+        step: "03",
+        title: "Execute",
+        description: "Handle the daily work reliably, with clear updates so you always know the status.",
+      },
+      {
+        step: "04",
+        title: "Improve",
+        description: "Document SOPs and refine workflows so operations run smoother every week.",
+      },
+    ],
+    outcomes: [
+      { label: "Hours freed weekly", value: "20+" },
+      { label: "Response time", value: "24h" },
+      { label: "Tasks handled", value: "100%" },
+    ],
+    featured: ["caroline-ayeni", "forma-interior"],
   },
 ];
+
+export function getService(slug: string) {
+  return services.find((s) => s.slug === slug);
+}
 
 export type Experience = {
   id: string;
