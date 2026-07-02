@@ -58,11 +58,12 @@ export const Route = createFileRoute("/services/$id")({
 });
 
 function ServiceDetailPage() {
-  const { service: s } = Route.useLoaderData();
+  const { service: s } = Route.useLoaderData() as { service: Service };
   const others = services.filter((x) => x.slug !== s.slug);
   const featuredProjects = s.featured
-    .map((id) => getProject(id))
-    .filter((p): p is NonNullable<typeof p> => Boolean(p));
+    .map((id: string) => getProject(id))
+    .filter((p): p is Project => Boolean(p));
+
 
   return (
     <main className="bg-background">
