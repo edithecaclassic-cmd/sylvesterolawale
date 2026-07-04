@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, ArrowUpRight, Check, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Minus, Plus, Quote, Sparkles } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
 import { ContactCTA } from "@/components/site/ContactCTA";
 import { Footer } from "@/components/site/Footer";
@@ -8,8 +9,6 @@ import {
   services,
   getProject,
   type Service,
-  type ServiceCapability,
-  type ServiceWorkflow,
   type Project,
 } from "@/data/portfolio";
 
