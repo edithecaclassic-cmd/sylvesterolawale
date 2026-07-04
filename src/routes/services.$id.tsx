@@ -58,6 +58,7 @@ export const Route = createFileRoute("/services/$id")({
 
 function ServiceDetailPage() {
   const { service: s } = Route.useLoaderData() as { service: Service };
+  const [openFaq, setOpenFaq] = useState(-1);
   const others = services.filter((x) => x.slug !== s.slug);
   const featuredProjects = s.featured
     .map((id: string) => getProject(id))
