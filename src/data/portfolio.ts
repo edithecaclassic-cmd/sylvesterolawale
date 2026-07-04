@@ -350,6 +350,34 @@ export const services: Service[] = [
       { label: "Avg. order value", value: "+18%" },
     ],
     featured: ["deeplus-media", "caroline-ayeni"],
+    feedbacks: [
+      {
+        quote:
+          "Our store finally feels premium and it sells. Product pages are clearer and checkout drop-off dropped noticeably.",
+        name: "Bimpe L.",
+        role: "Owner, Lumo Skincare",
+      },
+      {
+        quote:
+          "Sylvester understood our buyers better than we did. The optimisations paid for themselves in the first month.",
+        name: "Marcus D.",
+        role: "Ecommerce Manager",
+      },
+    ],
+    faqs: [
+      {
+        q: "Which platforms do you build on?",
+        a: "Primarily Shopify, plus Framer and Webflow commerce for smaller catalogues. I recommend the best fit for your products and budget.",
+      },
+      {
+        q: "Can you improve my existing store instead of rebuilding?",
+        a: "Absolutely. I run a conversion audit and apply targeted improvements to product pages, checkout, and trust signals without a full rebuild.",
+      },
+      {
+        q: "How do you measure success?",
+        a: "Conversion rate, cart abandonment, and average order value, tracked before and after so you can see the real revenue impact.",
+      },
+    ],
   },
   {
     slug: "virtual-assistance",
