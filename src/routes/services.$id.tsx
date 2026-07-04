@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, ArrowUpRight, Check, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Minus, Plus, Quote, Sparkles } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
 import { ContactCTA } from "@/components/site/ContactCTA";
 import { Footer } from "@/components/site/Footer";
@@ -8,8 +9,6 @@ import {
   services,
   getProject,
   type Service,
-  type ServiceCapability,
-  type ServiceWorkflow,
   type Project,
 } from "@/data/portfolio";
 
@@ -59,6 +58,7 @@ export const Route = createFileRoute("/services/$id")({
 
 function ServiceDetailPage() {
   const { service: s } = Route.useLoaderData() as { service: Service };
+  const [openFaq, setOpenFaq] = useState(-1);
   const others = services.filter((x) => x.slug !== s.slug);
   const featuredProjects = s.featured
     .map((id: string) => getProject(id))
@@ -234,6 +234,112 @@ function ServiceDetailPage() {
           </div>
         </section>
       )}
+
+      {/* Feedbacks */}
+      {s.feedbacks.length > 0 && (
+        <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
+          <p className="font-heading text-sm font-bold uppercase tracking-[0.25em] text-primary">
+            Feedback
+          </p>
+          <h2 className="mt-3 font-display text-3xl tracking-tight md:text-4xl">
+            What clients say
+          </h2>
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {s.feedbacks.map((f) => (
+              <figure
+                key={f.name}
+                className="glass rounded-2xl p-7 shadow-card"
+              >
+                <Quote className="h-7 w-7 text-primary" />
+                <blockquote className="mt-4 text-lg leading-relaxed text-foreground">
+                  "{f.quote}"
+                </blockquote>
+                <figcaption className="mt-5 text-sm">
+                  <span className="font-heading font-bold">{f.name}</span>
+                  <span className="text-muted-foreground"> — {f.role}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* FAQs */}
+      {s.faqs.length > 0 && (
+        <section className="bg-secondary/40 py-16 md:py-20">
+          <div className="mx-auto max-w-3xl px-5 md:px-8">
+            <p className="text-center font-heading text-sm font-bold uppercase tracking-[0.25em] text-primary">
+              Questions
+            </p>
+            <h2 className="mt-3 text-center font-display text-3xl tracking-tight md:text-4xl">
+              Good to know
+            </h2>
+            <div className="mt-10 divide-y divide-border border-y border-border">
+              {s.faqs.map((f, i) => {
+                const isOpen = openFaq === i;
+                return (
+                  <div key={f.q}>
+                    <button
+                      onClick={() => setOpenFaq(isOpen ? -1 : i)}
+                      className="flex w-full items-center justify-between gap-6 py-6 text-left"
+                    >
+                      <span className="font-heading text-lg font-bold">{f.q}</span>
+                      <span
+                        className={`flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full transition-colors ${
+                          isOpen
+                            ? "bg-primary text-primary-foreground"
+                            : "bg-secondary text-foreground"
+                        }`}
+                      >
+                        {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
+                      </span>
+                    </button>
+                    <div
+                      className="grid transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                      style={{ gridTemplateRows: isOpen ? "1fr" : "0fr", opacity: isOpen ? 1 : 0 }}
+                    >
+                      <div className="overflow-hidden">
+                        <p className="pb-6 text-muted-foreground">{f.a}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* CTA */}
+      <section className="mx-auto max-w-7xl px-5 pt-16 md:px-8 md:pt-20">
+        <div className="relative overflow-hidden rounded-3xl bg-ink px-6 py-12 text-center text-ink-foreground md:px-12 md:py-16">
+          <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-primary/20 blur-[100px]" />
+          <h2 className="relative font-display text-3xl tracking-tight md:text-4xl">
+            Ready to get started with {s.title.split("&")[0].trim().toLowerCase()}?
+          </h2>
+          <p className="relative mx-auto mt-4 max-w-xl text-ink-foreground/75">
+            Tell me about your project and I'll come back with a clear plan, timeline, and quote.
+          </p>
+          <div className="relative mt-8 flex flex-wrap justify-center gap-3">
+            <Link
+              to="/"
+              hash="contact"
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition-transform hover:scale-105"
+            >
+              Start a project <ArrowUpRight className="h-4 w-4" />
+            </Link>
+            <a
+              href="https://wa.me/2348058496536"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-ink-foreground transition-colors hover:text-primary"
+            >
+              Chat on WhatsApp <ArrowUpRight className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+      </section>
+
 
       {/* Other services */}
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">

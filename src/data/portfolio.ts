@@ -121,6 +121,8 @@ export function getProject(id: string) {
 
 export type ServiceCapability = { title: string; description: string };
 export type ServiceWorkflow = { step: string; title: string; description: string };
+export type ServiceFeedback = { quote: string; name: string; role: string };
+export type ServiceFaq = { q: string; a: string };
 
 export type Service = {
   slug: string;
@@ -134,6 +136,8 @@ export type Service = {
   workflow: ServiceWorkflow[];
   outcomes: { label: string; value: string }[];
   featured: string[];
+  feedbacks: ServiceFeedback[];
+  faqs: ServiceFaq[];
 };
 
 export const services: Service[] = [
@@ -206,6 +210,34 @@ export const services: Service[] = [
       { label: "Projects delivered", value: "50+" },
     ],
     featured: ["axion-logistics", "deeplus-media", "forma-interior"],
+    feedbacks: [
+      {
+        quote:
+          "Sylvester turned our vague idea into a website that finally feels like us. Bold, fast, and converting better than anything we had before.",
+        name: "Daniel A.",
+        role: "Founder, AXION Logistics",
+      },
+      {
+        quote:
+          "The redesign lifted our enquiries within weeks. Clean, modern, and exactly on-brand, the whole process was effortless.",
+        name: "Sarah M.",
+        role: "Director, Forma Interior",
+      },
+    ],
+    faqs: [
+      {
+        q: "How long does a website take to build?",
+        a: "A focused landing page typically takes 1–2 weeks; a full multi-page marketing site runs 3–5 weeks depending on scope and content readiness.",
+      },
+      {
+        q: "Do you write the copy and provide images?",
+        a: "I structure conversion-focused copy layouts and can guide or refine your content. For imagery I use your brand assets or source premium stock and handle all optimisation.",
+      },
+      {
+        q: "Will I be able to edit the site myself?",
+        a: "Yes. I build on Framer or Webflow so you get a visual editor, plus a short handover walkthrough so you can update content confidently.",
+      },
+    ],
   },
   {
     slug: "ai-automation",
@@ -276,6 +308,34 @@ export const services: Service[] = [
       { label: "Tools connected", value: "10+" },
     ],
     featured: ["forma-interior", "axion-logistics"],
+    feedbacks: [
+      {
+        quote:
+          "Sylvester automated our lead flow end to end. What used to take hours of copy-paste now happens on its own.",
+        name: "Grace N.",
+        role: "Ops Lead, Forma Interior",
+      },
+      {
+        quote:
+          "The AI assistant he built drafts our replies and reports flawlessly. It's like adding a teammate that never sleeps.",
+        name: "David K.",
+        role: "Founder, AXION Logistics",
+      },
+    ],
+    faqs: [
+      {
+        q: "Which tools can you connect?",
+        a: "Make, Zapier, n8n, OpenAI and other LLM APIs, plus CRMs, Airtable, Notion, Google Workspace and almost anything with an API or webhook.",
+      },
+      {
+        q: "Is my data safe in these automations?",
+        a: "Yes. I build with least-access credentials, add error handling and safeguards, and document exactly what each flow touches so nothing runs unchecked.",
+      },
+      {
+        q: "What happens if an automation breaks?",
+        a: "Every flow includes error notifications and fallbacks. I document everything and can provide monitoring so issues are caught and fixed fast.",
+      },
+    ],
   },
   {
     slug: "ecommerce",
@@ -346,6 +406,34 @@ export const services: Service[] = [
       { label: "Avg. order value", value: "+18%" },
     ],
     featured: ["deeplus-media", "caroline-ayeni"],
+    feedbacks: [
+      {
+        quote:
+          "Our store finally feels premium and it sells. Product pages are clearer and checkout drop-off dropped noticeably.",
+        name: "Bimpe L.",
+        role: "Owner, Lumo Skincare",
+      },
+      {
+        quote:
+          "Sylvester understood our buyers better than we did. The optimisations paid for themselves in the first month.",
+        name: "Marcus D.",
+        role: "Ecommerce Manager",
+      },
+    ],
+    faqs: [
+      {
+        q: "Which platforms do you build on?",
+        a: "Primarily Shopify, plus Framer and Webflow commerce for smaller catalogues. I recommend the best fit for your products and budget.",
+      },
+      {
+        q: "Can you improve my existing store instead of rebuilding?",
+        a: "Absolutely. I run a conversion audit and apply targeted improvements to product pages, checkout, and trust signals without a full rebuild.",
+      },
+      {
+        q: "How do you measure success?",
+        a: "Conversion rate, cart abandonment, and average order value, tracked before and after so you can see the real revenue impact.",
+      },
+    ],
   },
   {
     slug: "virtual-assistance",
@@ -416,6 +504,34 @@ export const services: Service[] = [
       { label: "Tasks handled", value: "100%" },
     ],
     featured: ["caroline-ayeni", "forma-interior"],
+    feedbacks: [
+      {
+        quote:
+          "Having Sylvester manage my inbox and calendar gave me back my mornings. Nothing falls through the cracks anymore.",
+        name: "Caroline A.",
+        role: "Coach & Consultant",
+      },
+      {
+        quote:
+          "Reliable, organised, and proactive. He set up systems that keep my whole operation running without me chasing tasks.",
+        name: "Tunde O.",
+        role: "Founder, Studio Loop",
+      },
+    ],
+    faqs: [
+      {
+        q: "What tasks can you take off my plate?",
+        a: "Inbox and calendar management, research, data entry, scheduling, customer support, project coordination, and documenting SOPs, whatever keeps you from focusing on high-value work.",
+      },
+      {
+        q: "How do we communicate and share access?",
+        a: "We agree on your preferred channels and tools up front. I work securely inside your systems with clear, regular status updates so you always know what's handled.",
+      },
+      {
+        q: "Do you offer ongoing support or one-off help?",
+        a: "Both. I take on ongoing monthly support as well as short, focused projects like inbox cleanups or system setups.",
+      },
+    ],
   },
 ];
 
