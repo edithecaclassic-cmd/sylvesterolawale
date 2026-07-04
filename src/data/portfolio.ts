@@ -210,6 +210,34 @@ export const services: Service[] = [
       { label: "Projects delivered", value: "50+" },
     ],
     featured: ["axion-logistics", "deeplus-media", "forma-interior"],
+    feedbacks: [
+      {
+        quote:
+          "Sylvester turned our vague idea into a website that finally feels like us. Bold, fast, and converting better than anything we had before.",
+        name: "Daniel A.",
+        role: "Founder, AXION Logistics",
+      },
+      {
+        quote:
+          "The redesign lifted our enquiries within weeks. Clean, modern, and exactly on-brand, the whole process was effortless.",
+        name: "Sarah M.",
+        role: "Director, Forma Interior",
+      },
+    ],
+    faqs: [
+      {
+        q: "How long does a website take to build?",
+        a: "A focused landing page typically takes 1–2 weeks; a full multi-page marketing site runs 3–5 weeks depending on scope and content readiness.",
+      },
+      {
+        q: "Do you write the copy and provide images?",
+        a: "I structure conversion-focused copy layouts and can guide or refine your content. For imagery I use your brand assets or source premium stock and handle all optimisation.",
+      },
+      {
+        q: "Will I be able to edit the site myself?",
+        a: "Yes. I build on Framer or Webflow so you get a visual editor, plus a short handover walkthrough so you can update content confidently.",
+      },
+    ],
   },
   {
     slug: "ai-automation",
