@@ -68,7 +68,7 @@ export function Hero() {
             SYLVESTER
           </span>
           <span
-            className="block text-white animate-rise-in"
+            className="block text-primary animate-rise-in"
             style={{ animationDelay: "0.18s" }}
           >
             OLALEYE
