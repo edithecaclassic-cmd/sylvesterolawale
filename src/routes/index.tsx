@@ -39,6 +39,7 @@ function Index() {
     <main className="bg-background">
       <Nav />
       <Hero />
+      <Marquee />
       <SelectedWork />
       <Services />
       <ProcessSection />
