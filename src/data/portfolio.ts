@@ -280,6 +280,34 @@ export const services: Service[] = [
       { label: "Tools connected", value: "10+" },
     ],
     featured: ["forma-interior", "axion-logistics"],
+    feedbacks: [
+      {
+        quote:
+          "Sylvester automated our lead flow end to end. What used to take hours of copy-paste now happens on its own.",
+        name: "Grace N.",
+        role: "Ops Lead, Forma Interior",
+      },
+      {
+        quote:
+          "The AI assistant he built drafts our replies and reports flawlessly. It's like adding a teammate that never sleeps.",
+        name: "David K.",
+        role: "Founder, AXION Logistics",
+      },
+    ],
+    faqs: [
+      {
+        q: "Which tools can you connect?",
+        a: "Make, Zapier, n8n, OpenAI and other LLM APIs, plus CRMs, Airtable, Notion, Google Workspace and almost anything with an API or webhook.",
+      },
+      {
+        q: "Is my data safe in these automations?",
+        a: "Yes. I build with least-access credentials, add error handling and safeguards, and document exactly what each flow touches so nothing runs unchecked.",
+      },
+      {
+        q: "What happens if an automation breaks?",
+        a: "Every flow includes error notifications and fallbacks. I document everything and can provide monitoring so issues are caught and fixed fast.",
+      },
+    ],
   },
   {
     slug: "ecommerce",
