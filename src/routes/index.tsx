@@ -10,6 +10,7 @@ import { Footer } from "@/components/site/Footer";
 import { Testimonials } from "@/components/site/Testimonials";
 import { FAQ } from "@/components/site/FAQ";
 import { StackReveal } from "@/components/site/StackReveal";
+import { Marquee } from "@/components/site/Marquee";
 
 
 export const Route = createFileRoute("/")({
