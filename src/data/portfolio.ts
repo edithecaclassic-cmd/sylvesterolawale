@@ -420,6 +420,34 @@ export const services: Service[] = [
       { label: "Tasks handled", value: "100%" },
     ],
     featured: ["caroline-ayeni", "forma-interior"],
+    feedbacks: [
+      {
+        quote:
+          "Having Sylvester manage my inbox and calendar gave me back my mornings. Nothing falls through the cracks anymore.",
+        name: "Caroline A.",
+        role: "Coach & Consultant",
+      },
+      {
+        quote:
+          "Reliable, organised, and proactive. He set up systems that keep my whole operation running without me chasing tasks.",
+        name: "Tunde O.",
+        role: "Founder, Studio Loop",
+      },
+    ],
+    faqs: [
+      {
+        q: "What tasks can you take off my plate?",
+        a: "Inbox and calendar management, research, data entry, scheduling, customer support, project coordination, and documenting SOPs, whatever keeps you from focusing on high-value work.",
+      },
+      {
+        q: "How do we communicate and share access?",
+        a: "We agree on your preferred channels and tools up front. I work securely inside your systems with clear, regular status updates so you always know what's handled.",
+      },
+      {
+        q: "Do you offer ongoing support or one-off help?",
+        a: "Both. I take on ongoing monthly support as well as short, focused projects like inbox cleanups or system setups.",
+      },
+    ],
   },
 ];
 
