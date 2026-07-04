@@ -121,6 +121,8 @@ export function getProject(id: string) {
 
 export type ServiceCapability = { title: string; description: string };
 export type ServiceWorkflow = { step: string; title: string; description: string };
+export type ServiceFeedback = { quote: string; name: string; role: string };
+export type ServiceFaq = { q: string; a: string };
 
 export type Service = {
   slug: string;
@@ -134,6 +136,8 @@ export type Service = {
   workflow: ServiceWorkflow[];
   outcomes: { label: string; value: string }[];
   featured: string[];
+  feedbacks: ServiceFeedback[];
+  faqs: ServiceFaq[];
 };
 
 export const services: Service[] = [
