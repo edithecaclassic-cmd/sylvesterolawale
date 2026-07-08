@@ -50,7 +50,7 @@ export function Hero() {
         {/* top: plain portrait with a transparent hole following the cursor */}
         <img
           ref={maskRef}
-          src={heroPlain.url}
+          src={heroPlain}
           alt="Sylvester Olaleye portrait"
           className="hero-mask absolute inset-0 h-full w-full object-cover object-[center_20%]"
           draggable={false}
