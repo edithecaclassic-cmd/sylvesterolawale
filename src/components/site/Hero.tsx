@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
-import heroPlain from "@/assets/hero-plain.png.asset.json";
+import heroPlain from "@/assets/hero-plain.png";
 import heroCyborg from "@/assets/hero-cyborg-aligned.png";
 import { socials } from "@/data/portfolio";
 
