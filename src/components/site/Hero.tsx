@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
-import heroPlain from "@/assets/hero-plain.png.asset.json";
+import heroPlain from "@/assets/hero-plain.png";
 import heroCyborg from "@/assets/hero-cyborg-aligned.png";
 import { socials } from "@/data/portfolio";
 
@@ -50,7 +50,7 @@ export function Hero() {
         {/* top: plain portrait with a transparent hole following the cursor */}
         <img
           ref={maskRef}
-          src={heroPlain.url}
+          src={heroPlain}
           alt="Sylvester Olaleye portrait"
           className="hero-mask absolute inset-0 h-full w-full object-cover object-[center_20%]"
           draggable={false}

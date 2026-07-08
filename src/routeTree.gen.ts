@@ -14,6 +14,8 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ExperienceRouteImport } from './routes/experience'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as WorkIndexRouteImport } from './routes/work.index'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as ExperienceIndexRouteImport } from './routes/experience.index'
 import { Route as WorkIdRouteImport } from './routes/work.$id'
 import { Route as ServicesIdRouteImport } from './routes/services.$id'
 import { Route as ExperienceIdRouteImport } from './routes/experience.$id'
@@ -43,6 +45,16 @@ const WorkIndexRoute = WorkIndexRouteImport.update({
   path: '/work/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ExperienceIndexRoute = ExperienceIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ExperienceRoute,
+} as any)
 const WorkIdRoute = WorkIdRouteImport.update({
   id: '/work/$id',
   path: '/work/$id',
@@ -67,16 +79,18 @@ export interface FileRoutesByFullPath {
   '/experience/$id': typeof ExperienceIdRoute
   '/services/$id': typeof ServicesIdRoute
   '/work/$id': typeof WorkIdRoute
+  '/experience/': typeof ExperienceIndexRoute
+  '/services/': typeof ServicesIndexRoute
   '/work/': typeof WorkIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/experience': typeof ExperienceRouteWithChildren
-  '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/experience/$id': typeof ExperienceIdRoute
   '/services/$id': typeof ServicesIdRoute
   '/work/$id': typeof WorkIdRoute
+  '/experience': typeof ExperienceIndexRoute
+  '/services': typeof ServicesIndexRoute
   '/work': typeof WorkIndexRoute
 }
 export interface FileRoutesById {
@@ -88,6 +102,8 @@ export interface FileRoutesById {
   '/experience/$id': typeof ExperienceIdRoute
   '/services/$id': typeof ServicesIdRoute
   '/work/$id': typeof WorkIdRoute
+  '/experience/': typeof ExperienceIndexRoute
+  '/services/': typeof ServicesIndexRoute
   '/work/': typeof WorkIndexRoute
 }
 export interface FileRouteTypes {
@@ -100,16 +116,18 @@ export interface FileRouteTypes {
     | '/experience/$id'
     | '/services/$id'
     | '/work/$id'
+    | '/experience/'
+    | '/services/'
     | '/work/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/experience'
-    | '/services'
     | '/sitemap.xml'
     | '/experience/$id'
     | '/services/$id'
     | '/work/$id'
+    | '/experience'
+    | '/services'
     | '/work'
   id:
     | '__root__'
@@ -120,6 +138,8 @@ export interface FileRouteTypes {
     | '/experience/$id'
     | '/services/$id'
     | '/work/$id'
+    | '/experience/'
+    | '/services/'
     | '/work/'
   fileRoutesById: FileRoutesById
 }
@@ -169,6 +189,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/': {
+      id: '/services/'
+      path: '/'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/experience/': {
+      id: '/experience/'
+      path: '/'
+      fullPath: '/experience/'
+      preLoaderRoute: typeof ExperienceIndexRouteImport
+      parentRoute: typeof ExperienceRoute
+    }
     '/work/$id': {
       id: '/work/$id'
       path: '/work/$id'
@@ -195,10 +229,12 @@ declare module '@tanstack/react-router' {
 
 interface ExperienceRouteChildren {
   ExperienceIdRoute: typeof ExperienceIdRoute
+  ExperienceIndexRoute: typeof ExperienceIndexRoute
 }
 
 const ExperienceRouteChildren: ExperienceRouteChildren = {
   ExperienceIdRoute: ExperienceIdRoute,
+  ExperienceIndexRoute: ExperienceIndexRoute,
 }
 
 const ExperienceRouteWithChildren = ExperienceRoute._addFileChildren(
@@ -207,10 +243,12 @@ const ExperienceRouteWithChildren = ExperienceRoute._addFileChildren(
 
 interface ServicesRouteChildren {
   ServicesIdRoute: typeof ServicesIdRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 const ServicesRouteChildren: ServicesRouteChildren = {
   ServicesIdRoute: ServicesIdRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
 }
 
 const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
